@@ -18,16 +18,13 @@ syntax Command = "step" | "turnLeft" | "drop" | "pick" | ("trace" StringExpressi
 syntax Direction = "north" | "south" | "east" | "west";
 syntax Expression = "full" | "mark" | ("wall" "ahead") | ("heading" Direction);
 
-syntax IfStatement = "if" Expression "do" Statement+ 
-	("end" | ("else" "do" Statement+ "end"));
+syntax IfStatement = "if" Expression "do" Command+ 
+	("end" | ("else" "do" Command+ "end"));
 
-syntax WhileStatement = "while" Expression "do" Statement+ "end";
+syntax WhileStatement = "while" Expression "do" Command+ "end";
 
-syntax RepeatStatement = "repeat" Integer "times" Statement+ "end";
+syntax RepeatStatement = "repeat" Integer "times" Command+ "end";
 
 syntax Statement = Command | IfStatement | WhileStatement | RepeatStatement | Comment;
 
-syntax Program = "Script" Name "runs" "as"
-Statement*
-"end"
-;
+start syntax Program = "Script" Name "runs" "as" Statement* "end";
