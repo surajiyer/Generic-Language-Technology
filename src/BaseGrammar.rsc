@@ -12,7 +12,6 @@ keyword Keywords = "Script" | "runs" | "as" | "end" |
 	"north" | "south" | "east" | "west" |
 	"if" | "do" | "else" | "while" | "repeat" | "times";
 
-
 syntax Command = "step" | "turnLeft" | "drop" | "pick" | ("trace" StringExpression);
 
 syntax Direction = "north" | "south" | "east" | "west";
