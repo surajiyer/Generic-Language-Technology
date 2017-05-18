@@ -28,8 +28,7 @@ Script sample runs as
 	end
 	
 	routine removeWall means
-		# destroyWall at row: 2 col: 7
-		step
+		destroyWall at row: 2 col: 7
 	end
 	
 end
