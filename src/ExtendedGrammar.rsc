@@ -7,8 +7,7 @@ keyword Keywords = "not" | "and" | "or" | "buildWall" | "destroyWall" |
 	"pickMark" | "dropMark" | "at" | "row:" | "col:" | ":" | "routine" | "means";
 
 //Logical expression extension
-syntax Expression = "not"? Expression;
-syntax Expression = Expression ("and"|"or")? Expression;
+syntax Expression = ("not" Expression) | (Expression ("and"|"or") Expression);
 
 //Scene construction extension
 syntax GridCommand = "buildWall" | "destroyWall" | "pickMark" | "dropMark";

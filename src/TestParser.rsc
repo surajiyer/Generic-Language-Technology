@@ -13,6 +13,8 @@ public Program program(loc l) {
 }
 
 public loc l1 = |project://GLT-assignments/test/test.robot|;
+public loc input1 = |project://GLT-assignments/test/input1.robot|;
+public loc input2 = |project://GLT-assignments/test/input2.robot|;
 
 public str s1 = "Script sample runs as
 	# turn right

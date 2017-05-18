@@ -1,13 +1,10 @@
-Script sample runs as 
-	# turn right
-	repeat 3 times
-		turnLeft
-	end
+Script sdjl runs as 
 	
-	step
+	test
 	
-	if mark do
-		pick
-		trace "Found and picked the mark!"
+	if mark do test end
+	
+	routine test means
+		step
 	end
 end

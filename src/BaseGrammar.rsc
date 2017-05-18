@@ -17,13 +17,15 @@ syntax Command = Comment | "step" | "turnLeft" | "drop" | "pick" | ("trace" Stri
 syntax Direction = "north" | "south" | "east" | "west";
 syntax Expression = "full" | "mark" | ("wall" "ahead") | ("heading" Direction);
 
-syntax IfStatement = "if" Expression "do" Command+ 
-	("end" | ("else" "do" Command+ "end"));
+// note that we assume that statements may also contain statements themselves (rather than just simple commands)
+// also, we assume that statement are allowed to be empty
+syntax IfStatement = "if" Expression "do" Statement* 
+	("end" | ("else" "do" Statement* "end"));
 
-syntax WhileStatement = "while" Expression "do" Command+ "end";
+syntax WhileStatement = "while" Expression "do" Statement* "end";
 
-syntax RepeatStatement = "repeat" Integer "times" Command+ "end";
+syntax RepeatStatement = "repeat" Integer "times" Statement* "end";
 
-syntax Statement = Command | IfStatement | WhileStatement | RepeatStatement | Comment;
+syntax Statement = Command | IfStatement | WhileStatement | RepeatStatement;
 
 start syntax Program = "Script" Name "runs" "as" Statement* "end";
