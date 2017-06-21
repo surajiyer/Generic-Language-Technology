@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kaja:Script xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kaja="http://www.example.org/kaja" name="sampleScene">
+  <commandlist>
+    <commands xsi:type="kaja:BuildWall" x="1" y="4"/>
+    <commands xsi:type="kaja:Step"/>
+  </commandlist>
+</kaja:Script>
