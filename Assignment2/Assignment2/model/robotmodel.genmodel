@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Assignment2/src" modelPluginID="Assignment2" modelName="RobotModel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>robotmodel.ecore</foreignModel>
+  <genPackages prefix="Robotmodel" disposableProviderFactory="true" ecorePackage="robotmodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//TraceLiteral">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//TraceLiteral/trace"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//CommandLiteral">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//CommandLiteral/step"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//CommandLiteral/turnLeft"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//CommandLiteral/drop"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//CommandLiteral/pick"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//OperatorLiteral">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//OperatorLiteral/and"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//OperatorLiteral/or"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//Keyword">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/Script"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/runs"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/as"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/end"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/step"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/turnLeft"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/drop"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/pick"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/trace"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/full"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/heading"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/north"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/if"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/do"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/else"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/while"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/repeat"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//Keyword/times"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//DirectionLiteral">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//DirectionLiteral/north"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//DirectionLiteral/south"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//DirectionLiteral/east"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//DirectionLiteral/west"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//HeadingLiteral">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//HeadingLiteral/heading"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//WallLiteral">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//WallLiteral/wall"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//AheadLiteral">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//AheadLiteral/ahead"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//NormalExpressionLiteral">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//NormalExpressionLiteral/full"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//NormalExpressionLiteral/mark"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//GridLiteral">
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//GridLiteral/buildWall"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//GridLiteral/destroyWall"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//GridLiteral/pickMark"/>
+      <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//GridLiteral/dropMark"/>
+    </genEnums>
+    <genClasses ecoreClass="robotmodel.ecore#//Script">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//Script/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//Script/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//Statement"/>
+    <genClasses ecoreClass="robotmodel.ecore#//IfStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//IfStatement/ifExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//IfStatement/statements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//IfStatement/statements2"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//WhileStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//WhileStatement/whileExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//WhileStatement/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//RepeatStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//RepeatStatement/statements"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//RepeatStatement/integer"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//Command"/>
+    <genClasses ecoreClass="robotmodel.ecore#//Comment"/>
+    <genClasses ecoreClass="robotmodel.ecore#//TraceCommand">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotmodel.ecore#//TraceCommand/traceLiteral"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//TraceCommand/string"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//AtomicCommand">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotmodel.ecore#//AtomicCommand/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//Expression"/>
+    <genClasses ecoreClass="robotmodel.ecore#//NegatedExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotmodel.ecore#//NegatedExpression/negatedExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//AtomicExpression"/>
+    <genClasses ecoreClass="robotmodel.ecore#//BinaryExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//BinaryExpression/leftExpression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference robotmodel.ecore#//BinaryExpression/rightExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotmodel.ecore#//BinaryExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//Layout"/>
+    <genClasses ecoreClass="robotmodel.ecore#//Integer"/>
+    <genClasses ecoreClass="robotmodel.ecore#//StringExpression"/>
+    <genClasses ecoreClass="robotmodel.ecore#//HeadingExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotmodel.ecore#//HeadingExpression/headingLiteral"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotmodel.ecore#//HeadingExpression/directionLiteral"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//WallAheadExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute robotmodel.ecore#//WallAheadExpression/wall"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute robotmodel.ecore#//WallAheadExpression/ahead"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//NormalExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotmodel.ecore#//NormalExpression/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="robotmodel.ecore#//Name"/>
+    <genClasses ecoreClass="robotmodel.ecore#//ConstructionStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference robotmodel.ecore#//ConstructionStatement/integers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute robotmodel.ecore#//ConstructionStatement/command"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

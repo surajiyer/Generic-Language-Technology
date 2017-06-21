@@ -1,0 +1,25 @@
+1. 
+For the design of the model, we mainly looked at our Rascal code of assignment 1. 
+For each syntactical definition there we created an EClass in the model. 
+To model alternatives we used inheritance: e.g. if A = B | C, then B and C are subclassses of A.
+If A itself is not used explicitly, we made it abstract.
+Concrete keywords like "full", "north" etc. we modeled as literals, which we could put into EEnums.
+
+2.
+Since the automatically generated xtext assumed a specific syntax we had to change quite alot.
+Mainly we needed to remove the braces ('{' and '}') and also the names of the class (e.g. we don't want the class name 'IfStatement' from our model to be in the syntax.
+Also, we had to manually replace classes 'Name', 'Integer' and 'StringExpression' with the corresponding regular expression: ID, INT and STRING as provided in Terminals.xtext.
+
+3.
+Creating the metamodel was pretty straightforward, since we could simply model each syntactic concept as an EClass.
+
+4.
+The grammar prodived some difficulties. Especially the binary expressions (with 'and' and 'or'). 
+We could not define an 'BinaryExpression' as 'Expression' ('and'|'or') 'Expression', because this would provide left recursion.
+Apparently we could fix this by adding something in front of the defintion, e.g. 'BinaryExpression = '(' 'Expression' ('and'|'or') 'Expresion' ')'. 
+So we were forced to add the requirement to put parentheses around a binary expression.
+
+5.
+Xtext seems to work similarly to Rascal, although it does look somewhat more complicated. 
+Therefore it is handy that we can create a metamodel first, which is relatively easy, and then automtically convert it.
+However, we still needed to change quite alot in the generated Xtext, so we are not sure if the total workload is much better than if using Rascal.
