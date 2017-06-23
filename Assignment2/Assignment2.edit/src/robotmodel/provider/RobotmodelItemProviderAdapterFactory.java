@@ -302,52 +302,6 @@ public class RobotmodelItemProviderAdapterFactory extends RobotmodelAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link robotmodel.Integer} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IntegerItemProvider integerItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link robotmodel.Integer}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIntegerAdapter() {
-		if (integerItemProvider == null) {
-			integerItemProvider = new IntegerItemProvider(this);
-		}
-
-		return integerItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link robotmodel.StringExpression} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StringExpressionItemProvider stringExpressionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link robotmodel.StringExpression}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStringExpressionAdapter() {
-		if (stringExpressionItemProvider == null) {
-			stringExpressionItemProvider = new StringExpressionItemProvider(this);
-		}
-
-		return stringExpressionItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link robotmodel.HeadingExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -571,8 +525,6 @@ public class RobotmodelItemProviderAdapterFactory extends RobotmodelAdapterFacto
 		if (negatedExpressionItemProvider != null) negatedExpressionItemProvider.dispose();
 		if (binaryExpressionItemProvider != null) binaryExpressionItemProvider.dispose();
 		if (layoutItemProvider != null) layoutItemProvider.dispose();
-		if (integerItemProvider != null) integerItemProvider.dispose();
-		if (stringExpressionItemProvider != null) stringExpressionItemProvider.dispose();
 		if (headingExpressionItemProvider != null) headingExpressionItemProvider.dispose();
 		if (wallAheadExpressionItemProvider != null) wallAheadExpressionItemProvider.dispose();
 		if (normalExpressionItemProvider != null) normalExpressionItemProvider.dispose();

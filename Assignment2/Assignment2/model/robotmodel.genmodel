@@ -4,7 +4,8 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>robotmodel.ecore</foreignModel>
-  <genPackages prefix="Robotmodel" disposableProviderFactory="true" ecorePackage="robotmodel.ecore#/">
+  <genPackages prefix="Robotmodel" disposableProviderFactory="true" fileExtensions="robot"
+      ecorePackage="robotmodel.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="robotmodel.ecore#//TraceLiteral">
       <genEnumLiterals ecoreEnumLiteral="robotmodel.ecore#//TraceLiteral/trace"/>
     </genEnums>

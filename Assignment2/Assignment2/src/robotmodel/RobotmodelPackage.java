@@ -47,7 +47,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "pref";
+	String eNS_PREFIX = "";
 
 	/**
 	 * The singleton instance of the package.
@@ -77,13 +77,13 @@ public interface RobotmodelPackage extends EPackage {
 	int SCRIPT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT__STATEMENTS = 1;
+	int SCRIPT__COMMAND = 1;
 
 	/**
 	 * The number of structural features of the '<em>Script</em>' class.
@@ -142,31 +142,31 @@ public interface RobotmodelPackage extends EPackage {
 	int IF_STATEMENT = 2;
 
 	/**
-	 * The feature id for the '<em><b>If Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT__IF_EXPRESSION = STATEMENT_FEATURE_COUNT + 0;
+	int IF_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 1;
+	int IF_STATEMENT__COMMAND = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Statements2</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Command2</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF_STATEMENT__STATEMENTS2 = STATEMENT_FEATURE_COUNT + 2;
+	int IF_STATEMENT__COMMAND2 = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>If Statement</em>' class.
@@ -197,22 +197,22 @@ public interface RobotmodelPackage extends EPackage {
 	int WHILE_STATEMENT = 3;
 
 	/**
-	 * The feature id for the '<em><b>While Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WHILE_STATEMENT__WHILE_EXPRESSION = STATEMENT_FEATURE_COUNT + 0;
+	int WHILE_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WHILE_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 1;
+	int WHILE_STATEMENT__COMMAND = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>While Statement</em>' class.
@@ -243,22 +243,22 @@ public interface RobotmodelPackage extends EPackage {
 	int REPEAT_STATEMENT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPEAT_STATEMENT__STATEMENTS = STATEMENT_FEATURE_COUNT + 0;
+	int REPEAT_STATEMENT__COMMAND = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Integer</b></em>' containment reference.
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPEAT_STATEMENT__INTEGER = STATEMENT_FEATURE_COUNT + 1;
+	int REPEAT_STATEMENT__CONDITION = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Repeat Statement</em>' class.
@@ -317,13 +317,22 @@ public interface RobotmodelPackage extends EPackage {
 	int COMMENT = 6;
 
 	/**
+	 * The feature id for the '<em><b>Command</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__COMMAND = COMMAND_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Comment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
+	int COMMENT_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Comment</em>' class.
@@ -354,13 +363,13 @@ public interface RobotmodelPackage extends EPackage {
 	int TRACE_COMMAND__TRACE_LITERAL = COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>String</b></em>' containment reference.
+	 * The feature id for the '<em><b>Command</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE_COMMAND__STRING = COMMAND_FEATURE_COUNT + 1;
+	int TRACE_COMMAND__COMMAND = COMMAND_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Trace Command</em>' class.
@@ -391,13 +400,13 @@ public interface RobotmodelPackage extends EPackage {
 	int ATOMIC_COMMAND = 8;
 
 	/**
-	 * The feature id for the '<em><b>Literal</b></em>' attribute.
+	 * The feature id for the '<em><b>Command</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATOMIC_COMMAND__LITERAL = COMMAND_FEATURE_COUNT + 0;
+	int ATOMIC_COMMAND__COMMAND = COMMAND_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Atomic Command</em>' class.
@@ -594,62 +603,6 @@ public interface RobotmodelPackage extends EPackage {
 	int LAYOUT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link robotmodel.impl.IntegerImpl <em>Integer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see robotmodel.impl.IntegerImpl
-	 * @see robotmodel.impl.RobotmodelPackageImpl#getInteger()
-	 * @generated
-	 */
-	int INTEGER = 14;
-
-	/**
-	 * The number of structural features of the '<em>Integer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Integer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link robotmodel.impl.StringExpressionImpl <em>String Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see robotmodel.impl.StringExpressionImpl
-	 * @see robotmodel.impl.RobotmodelPackageImpl#getStringExpression()
-	 * @generated
-	 */
-	int STRING_EXPRESSION = 15;
-
-	/**
-	 * The number of structural features of the '<em>String Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_EXPRESSION_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>String Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_EXPRESSION_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link robotmodel.impl.HeadingExpressionImpl <em>Heading Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -657,7 +610,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getHeadingExpression()
 	 * @generated
 	 */
-	int HEADING_EXPRESSION = 16;
+	int HEADING_EXPRESSION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Heading Literal</b></em>' attribute.
@@ -703,7 +656,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getWallAheadExpression()
 	 * @generated
 	 */
-	int WALL_AHEAD_EXPRESSION = 17;
+	int WALL_AHEAD_EXPRESSION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Wall</b></em>' attribute.
@@ -749,7 +702,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getNormalExpression()
 	 * @generated
 	 */
-	int NORMAL_EXPRESSION = 18;
+	int NORMAL_EXPRESSION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Literal</b></em>' attribute.
@@ -786,7 +739,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getName_()
 	 * @generated
 	 */
-	int NAME = 19;
+	int NAME = 17;
 
 	/**
 	 * The number of structural features of the '<em>Name</em>' class.
@@ -814,16 +767,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getConstructionStatement()
 	 * @generated
 	 */
-	int CONSTRUCTION_STATEMENT = 20;
-
-	/**
-	 * The feature id for the '<em><b>Integers</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSTRUCTION_STATEMENT__INTEGERS = STATEMENT_FEATURE_COUNT + 0;
+	int CONSTRUCTION_STATEMENT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Command</b></em>' attribute.
@@ -832,7 +776,25 @@ public interface RobotmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTION_STATEMENT__COMMAND = STATEMENT_FEATURE_COUNT + 1;
+	int CONSTRUCTION_STATEMENT__COMMAND = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>X</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTION_STATEMENT__X = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Y</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRUCTION_STATEMENT__Y = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Construction Statement</em>' class.
@@ -841,7 +803,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRUCTION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+	int CONSTRUCTION_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Construction Statement</em>' class.
@@ -860,7 +822,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getTraceLiteral()
 	 * @generated
 	 */
-	int TRACE_LITERAL = 21;
+	int TRACE_LITERAL = 19;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.CommandLiteral <em>Command Literal</em>}' enum.
@@ -870,7 +832,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getCommandLiteral()
 	 * @generated
 	 */
-	int COMMAND_LITERAL = 22;
+	int COMMAND_LITERAL = 20;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.OperatorLiteral <em>Operator Literal</em>}' enum.
@@ -880,7 +842,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getOperatorLiteral()
 	 * @generated
 	 */
-	int OPERATOR_LITERAL = 23;
+	int OPERATOR_LITERAL = 21;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.Keyword <em>Keyword</em>}' enum.
@@ -890,7 +852,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getKeyword()
 	 * @generated
 	 */
-	int KEYWORD = 24;
+	int KEYWORD = 22;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.DirectionLiteral <em>Direction Literal</em>}' enum.
@@ -900,7 +862,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getDirectionLiteral()
 	 * @generated
 	 */
-	int DIRECTION_LITERAL = 25;
+	int DIRECTION_LITERAL = 23;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.HeadingLiteral <em>Heading Literal</em>}' enum.
@@ -910,7 +872,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getHeadingLiteral()
 	 * @generated
 	 */
-	int HEADING_LITERAL = 26;
+	int HEADING_LITERAL = 24;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.WallLiteral <em>Wall Literal</em>}' enum.
@@ -920,7 +882,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getWallLiteral()
 	 * @generated
 	 */
-	int WALL_LITERAL = 27;
+	int WALL_LITERAL = 25;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.AheadLiteral <em>Ahead Literal</em>}' enum.
@@ -930,7 +892,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getAheadLiteral()
 	 * @generated
 	 */
-	int AHEAD_LITERAL = 28;
+	int AHEAD_LITERAL = 26;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.NormalExpressionLiteral <em>Normal Expression Literal</em>}' enum.
@@ -940,7 +902,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getNormalExpressionLiteral()
 	 * @generated
 	 */
-	int NORMAL_EXPRESSION_LITERAL = 29;
+	int NORMAL_EXPRESSION_LITERAL = 27;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.GridLiteral <em>Grid Literal</em>}' enum.
@@ -950,7 +912,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getGridLiteral()
 	 * @generated
 	 */
-	int GRID_LITERAL = 30;
+	int GRID_LITERAL = 28;
 
 
 	/**
@@ -975,15 +937,15 @@ public interface RobotmodelPackage extends EPackage {
 	EReference getScript_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotmodel.Script#getStatements <em>Statements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link robotmodel.Script#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see robotmodel.Script#getStatements()
+	 * @return the meta object for the containment reference list '<em>Command</em>'.
+	 * @see robotmodel.Script#getCommand()
 	 * @see #getScript()
 	 * @generated
 	 */
-	EReference getScript_Statements();
+	EReference getScript_Command();
 
 	/**
 	 * Returns the meta object for class '{@link robotmodel.Statement <em>Statement</em>}'.
@@ -1006,37 +968,37 @@ public interface RobotmodelPackage extends EPackage {
 	EClass getIfStatement();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link robotmodel.IfStatement#getIfExpression <em>If Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link robotmodel.IfStatement#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>If Expression</em>'.
-	 * @see robotmodel.IfStatement#getIfExpression()
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see robotmodel.IfStatement#getCondition()
 	 * @see #getIfStatement()
 	 * @generated
 	 */
-	EReference getIfStatement_IfExpression();
+	EReference getIfStatement_Condition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotmodel.IfStatement#getStatements <em>Statements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link robotmodel.IfStatement#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see robotmodel.IfStatement#getStatements()
+	 * @return the meta object for the containment reference list '<em>Command</em>'.
+	 * @see robotmodel.IfStatement#getCommand()
 	 * @see #getIfStatement()
 	 * @generated
 	 */
-	EReference getIfStatement_Statements();
+	EReference getIfStatement_Command();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotmodel.IfStatement#getStatements2 <em>Statements2</em>}'.
+	 * Returns the meta object for the containment reference list '{@link robotmodel.IfStatement#getCommand2 <em>Command2</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements2</em>'.
-	 * @see robotmodel.IfStatement#getStatements2()
+	 * @return the meta object for the containment reference list '<em>Command2</em>'.
+	 * @see robotmodel.IfStatement#getCommand2()
 	 * @see #getIfStatement()
 	 * @generated
 	 */
-	EReference getIfStatement_Statements2();
+	EReference getIfStatement_Command2();
 
 	/**
 	 * Returns the meta object for class '{@link robotmodel.WhileStatement <em>While Statement</em>}'.
@@ -1049,26 +1011,26 @@ public interface RobotmodelPackage extends EPackage {
 	EClass getWhileStatement();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link robotmodel.WhileStatement#getWhileExpression <em>While Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link robotmodel.WhileStatement#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>While Expression</em>'.
-	 * @see robotmodel.WhileStatement#getWhileExpression()
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see robotmodel.WhileStatement#getCondition()
 	 * @see #getWhileStatement()
 	 * @generated
 	 */
-	EReference getWhileStatement_WhileExpression();
+	EReference getWhileStatement_Condition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotmodel.WhileStatement#getStatements <em>Statements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link robotmodel.WhileStatement#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see robotmodel.WhileStatement#getStatements()
+	 * @return the meta object for the containment reference list '<em>Command</em>'.
+	 * @see robotmodel.WhileStatement#getCommand()
 	 * @see #getWhileStatement()
 	 * @generated
 	 */
-	EReference getWhileStatement_Statements();
+	EReference getWhileStatement_Command();
 
 	/**
 	 * Returns the meta object for class '{@link robotmodel.RepeatStatement <em>Repeat Statement</em>}'.
@@ -1081,26 +1043,26 @@ public interface RobotmodelPackage extends EPackage {
 	EClass getRepeatStatement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotmodel.RepeatStatement#getStatements <em>Statements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link robotmodel.RepeatStatement#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see robotmodel.RepeatStatement#getStatements()
+	 * @return the meta object for the containment reference list '<em>Command</em>'.
+	 * @see robotmodel.RepeatStatement#getCommand()
 	 * @see #getRepeatStatement()
 	 * @generated
 	 */
-	EReference getRepeatStatement_Statements();
+	EReference getRepeatStatement_Command();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link robotmodel.RepeatStatement#getInteger <em>Integer</em>}'.
+	 * Returns the meta object for the attribute '{@link robotmodel.RepeatStatement#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Integer</em>'.
-	 * @see robotmodel.RepeatStatement#getInteger()
+	 * @return the meta object for the attribute '<em>Condition</em>'.
+	 * @see robotmodel.RepeatStatement#getCondition()
 	 * @see #getRepeatStatement()
 	 * @generated
 	 */
-	EReference getRepeatStatement_Integer();
+	EAttribute getRepeatStatement_Condition();
 
 	/**
 	 * Returns the meta object for class '{@link robotmodel.Command <em>Command</em>}'.
@@ -1121,6 +1083,17 @@ public interface RobotmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComment();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotmodel.Comment#getCommand <em>Command</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Command</em>'.
+	 * @see robotmodel.Comment#getCommand()
+	 * @see #getComment()
+	 * @generated
+	 */
+	EAttribute getComment_Command();
 
 	/**
 	 * Returns the meta object for class '{@link robotmodel.TraceCommand <em>Trace Command</em>}'.
@@ -1144,15 +1117,15 @@ public interface RobotmodelPackage extends EPackage {
 	EAttribute getTraceCommand_TraceLiteral();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link robotmodel.TraceCommand#getString <em>String</em>}'.
+	 * Returns the meta object for the attribute '{@link robotmodel.TraceCommand#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>String</em>'.
-	 * @see robotmodel.TraceCommand#getString()
+	 * @return the meta object for the attribute '<em>Command</em>'.
+	 * @see robotmodel.TraceCommand#getCommand()
 	 * @see #getTraceCommand()
 	 * @generated
 	 */
-	EReference getTraceCommand_String();
+	EAttribute getTraceCommand_Command();
 
 	/**
 	 * Returns the meta object for class '{@link robotmodel.AtomicCommand <em>Atomic Command</em>}'.
@@ -1165,15 +1138,15 @@ public interface RobotmodelPackage extends EPackage {
 	EClass getAtomicCommand();
 
 	/**
-	 * Returns the meta object for the attribute '{@link robotmodel.AtomicCommand#getLiteral <em>Literal</em>}'.
+	 * Returns the meta object for the attribute '{@link robotmodel.AtomicCommand#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Literal</em>'.
-	 * @see robotmodel.AtomicCommand#getLiteral()
+	 * @return the meta object for the attribute '<em>Command</em>'.
+	 * @see robotmodel.AtomicCommand#getCommand()
 	 * @see #getAtomicCommand()
 	 * @generated
 	 */
-	EAttribute getAtomicCommand_Literal();
+	EAttribute getAtomicCommand_Command();
 
 	/**
 	 * Returns the meta object for class '{@link robotmodel.Expression <em>Expression</em>}'.
@@ -1268,26 +1241,6 @@ public interface RobotmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getLayout();
-
-	/**
-	 * Returns the meta object for class '{@link robotmodel.Integer <em>Integer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Integer</em>'.
-	 * @see robotmodel.Integer
-	 * @generated
-	 */
-	EClass getInteger();
-
-	/**
-	 * Returns the meta object for class '{@link robotmodel.StringExpression <em>String Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String Expression</em>'.
-	 * @see robotmodel.StringExpression
-	 * @generated
-	 */
-	EClass getStringExpression();
 
 	/**
 	 * Returns the meta object for class '{@link robotmodel.HeadingExpression <em>Heading Expression</em>}'.
@@ -1395,17 +1348,6 @@ public interface RobotmodelPackage extends EPackage {
 	EClass getConstructionStatement();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link robotmodel.ConstructionStatement#getIntegers <em>Integers</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Integers</em>'.
-	 * @see robotmodel.ConstructionStatement#getIntegers()
-	 * @see #getConstructionStatement()
-	 * @generated
-	 */
-	EReference getConstructionStatement_Integers();
-
-	/**
 	 * Returns the meta object for the attribute '{@link robotmodel.ConstructionStatement#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1415,6 +1357,28 @@ public interface RobotmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConstructionStatement_Command();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotmodel.ConstructionStatement#getX <em>X</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>X</em>'.
+	 * @see robotmodel.ConstructionStatement#getX()
+	 * @see #getConstructionStatement()
+	 * @generated
+	 */
+	EAttribute getConstructionStatement_X();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotmodel.ConstructionStatement#getY <em>Y</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Y</em>'.
+	 * @see robotmodel.ConstructionStatement#getY()
+	 * @see #getConstructionStatement()
+	 * @generated
+	 */
+	EAttribute getConstructionStatement_Y();
 
 	/**
 	 * Returns the meta object for enum '{@link robotmodel.TraceLiteral <em>Trace Literal</em>}'.
@@ -1558,12 +1522,12 @@ public interface RobotmodelPackage extends EPackage {
 		EReference SCRIPT__NAME = eINSTANCE.getScript_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Command</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCRIPT__STATEMENTS = eINSTANCE.getScript_Statements();
+		EReference SCRIPT__COMMAND = eINSTANCE.getScript_Command();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.impl.StatementImpl <em>Statement</em>}' class.
@@ -1586,28 +1550,28 @@ public interface RobotmodelPackage extends EPackage {
 		EClass IF_STATEMENT = eINSTANCE.getIfStatement();
 
 		/**
-		 * The meta object literal for the '<em><b>If Expression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IF_STATEMENT__IF_EXPRESSION = eINSTANCE.getIfStatement_IfExpression();
+		EReference IF_STATEMENT__CONDITION = eINSTANCE.getIfStatement_Condition();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Command</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IF_STATEMENT__STATEMENTS = eINSTANCE.getIfStatement_Statements();
+		EReference IF_STATEMENT__COMMAND = eINSTANCE.getIfStatement_Command();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements2</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Command2</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IF_STATEMENT__STATEMENTS2 = eINSTANCE.getIfStatement_Statements2();
+		EReference IF_STATEMENT__COMMAND2 = eINSTANCE.getIfStatement_Command2();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.impl.WhileStatementImpl <em>While Statement</em>}' class.
@@ -1620,20 +1584,20 @@ public interface RobotmodelPackage extends EPackage {
 		EClass WHILE_STATEMENT = eINSTANCE.getWhileStatement();
 
 		/**
-		 * The meta object literal for the '<em><b>While Expression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WHILE_STATEMENT__WHILE_EXPRESSION = eINSTANCE.getWhileStatement_WhileExpression();
+		EReference WHILE_STATEMENT__CONDITION = eINSTANCE.getWhileStatement_Condition();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Command</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WHILE_STATEMENT__STATEMENTS = eINSTANCE.getWhileStatement_Statements();
+		EReference WHILE_STATEMENT__COMMAND = eINSTANCE.getWhileStatement_Command();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.impl.RepeatStatementImpl <em>Repeat Statement</em>}' class.
@@ -1646,20 +1610,20 @@ public interface RobotmodelPackage extends EPackage {
 		EClass REPEAT_STATEMENT = eINSTANCE.getRepeatStatement();
 
 		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Command</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REPEAT_STATEMENT__STATEMENTS = eINSTANCE.getRepeatStatement_Statements();
+		EReference REPEAT_STATEMENT__COMMAND = eINSTANCE.getRepeatStatement_Command();
 
 		/**
-		 * The meta object literal for the '<em><b>Integer</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REPEAT_STATEMENT__INTEGER = eINSTANCE.getRepeatStatement_Integer();
+		EAttribute REPEAT_STATEMENT__CONDITION = eINSTANCE.getRepeatStatement_Condition();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.impl.CommandImpl <em>Command</em>}' class.
@@ -1682,6 +1646,14 @@ public interface RobotmodelPackage extends EPackage {
 		EClass COMMENT = eINSTANCE.getComment();
 
 		/**
+		 * The meta object literal for the '<em><b>Command</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMENT__COMMAND = eINSTANCE.getComment_Command();
+
+		/**
 		 * The meta object literal for the '{@link robotmodel.impl.TraceCommandImpl <em>Trace Command</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1700,12 +1672,12 @@ public interface RobotmodelPackage extends EPackage {
 		EAttribute TRACE_COMMAND__TRACE_LITERAL = eINSTANCE.getTraceCommand_TraceLiteral();
 
 		/**
-		 * The meta object literal for the '<em><b>String</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Command</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRACE_COMMAND__STRING = eINSTANCE.getTraceCommand_String();
+		EAttribute TRACE_COMMAND__COMMAND = eINSTANCE.getTraceCommand_Command();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.impl.AtomicCommandImpl <em>Atomic Command</em>}' class.
@@ -1718,12 +1690,12 @@ public interface RobotmodelPackage extends EPackage {
 		EClass ATOMIC_COMMAND = eINSTANCE.getAtomicCommand();
 
 		/**
-		 * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Command</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATOMIC_COMMAND__LITERAL = eINSTANCE.getAtomicCommand_Literal();
+		EAttribute ATOMIC_COMMAND__COMMAND = eINSTANCE.getAtomicCommand_Command();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -1806,26 +1778,6 @@ public interface RobotmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LAYOUT = eINSTANCE.getLayout();
-
-		/**
-		 * The meta object literal for the '{@link robotmodel.impl.IntegerImpl <em>Integer</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see robotmodel.impl.IntegerImpl
-		 * @see robotmodel.impl.RobotmodelPackageImpl#getInteger()
-		 * @generated
-		 */
-		EClass INTEGER = eINSTANCE.getInteger();
-
-		/**
-		 * The meta object literal for the '{@link robotmodel.impl.StringExpressionImpl <em>String Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see robotmodel.impl.StringExpressionImpl
-		 * @see robotmodel.impl.RobotmodelPackageImpl#getStringExpression()
-		 * @generated
-		 */
-		EClass STRING_EXPRESSION = eINSTANCE.getStringExpression();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.impl.HeadingExpressionImpl <em>Heading Expression</em>}' class.
@@ -1918,20 +1870,28 @@ public interface RobotmodelPackage extends EPackage {
 		EClass CONSTRUCTION_STATEMENT = eINSTANCE.getConstructionStatement();
 
 		/**
-		 * The meta object literal for the '<em><b>Integers</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONSTRUCTION_STATEMENT__INTEGERS = eINSTANCE.getConstructionStatement_Integers();
-
-		/**
 		 * The meta object literal for the '<em><b>Command</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute CONSTRUCTION_STATEMENT__COMMAND = eINSTANCE.getConstructionStatement_Command();
+
+		/**
+		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRUCTION_STATEMENT__X = eINSTANCE.getConstructionStatement_X();
+
+		/**
+		 * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSTRUCTION_STATEMENT__Y = eINSTANCE.getConstructionStatement_Y();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.TraceLiteral <em>Trace Literal</em>}' enum.

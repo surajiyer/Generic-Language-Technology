@@ -11,34 +11,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import robotmodel.AheadLiteral;
-import robotmodel.AtomicCommand;
-import robotmodel.BinaryExpression;
-import robotmodel.CommandLiteral;
-import robotmodel.Comment;
-import robotmodel.ConstructionStatement;
-import robotmodel.DirectionLiteral;
-import robotmodel.GridLiteral;
-import robotmodel.HeadingExpression;
-import robotmodel.HeadingLiteral;
-import robotmodel.IfStatement;
-import robotmodel.Keyword;
-import robotmodel.Layout;
-import robotmodel.Name;
-import robotmodel.NegatedExpression;
-import robotmodel.NormalExpression;
-import robotmodel.NormalExpressionLiteral;
-import robotmodel.OperatorLiteral;
-import robotmodel.RepeatStatement;
-import robotmodel.RobotmodelFactory;
-import robotmodel.RobotmodelPackage;
-import robotmodel.Script;
-import robotmodel.StringExpression;
-import robotmodel.TraceCommand;
-import robotmodel.TraceLiteral;
-import robotmodel.WallAheadExpression;
-import robotmodel.WallLiteral;
-import robotmodel.WhileStatement;
+import robotmodel.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -94,8 +67,6 @@ public class RobotmodelFactoryImpl extends EFactoryImpl implements RobotmodelFac
 			case RobotmodelPackage.NEGATED_EXPRESSION: return createNegatedExpression();
 			case RobotmodelPackage.BINARY_EXPRESSION: return createBinaryExpression();
 			case RobotmodelPackage.LAYOUT: return createLayout();
-			case RobotmodelPackage.INTEGER: return createInteger();
-			case RobotmodelPackage.STRING_EXPRESSION: return createStringExpression();
 			case RobotmodelPackage.HEADING_EXPRESSION: return createHeadingExpression();
 			case RobotmodelPackage.WALL_AHEAD_EXPRESSION: return createWallAheadExpression();
 			case RobotmodelPackage.NORMAL_EXPRESSION: return createNormalExpression();
@@ -270,26 +241,6 @@ public class RobotmodelFactoryImpl extends EFactoryImpl implements RobotmodelFac
 	public Layout createLayout() {
 		LayoutImpl layout = new LayoutImpl();
 		return layout;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public robotmodel.Integer createInteger() {
-		IntegerImpl integer = new IntegerImpl();
-		return integer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public StringExpression createStringExpression() {
-		StringExpressionImpl stringExpression = new StringExpressionImpl();
-		return stringExpression;
 	}
 
 	/**

@@ -32,7 +32,7 @@ import robotmodel.Statement;
  * </p>
  * <ul>
  *   <li>{@link robotmodel.impl.ScriptImpl#getName <em>Name</em>}</li>
- *   <li>{@link robotmodel.impl.ScriptImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link robotmodel.impl.ScriptImpl#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,14 +49,14 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	protected Name name;
 
 	/**
-	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+	 * The cached value of the '{@link #getCommand() <em>Command</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatements()
+	 * @see #getCommand()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Statement> statements;
+	protected EList<Statement> command;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,11 +125,11 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Statement> getStatements() {
-		if (statements == null) {
-			statements = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.SCRIPT__STATEMENTS);
+	public EList<Statement> getCommand() {
+		if (command == null) {
+			command = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.SCRIPT__COMMAND);
 		}
-		return statements;
+		return command;
 	}
 
 	/**
@@ -142,8 +142,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 		switch (featureID) {
 			case RobotmodelPackage.SCRIPT__NAME:
 				return basicSetName(null, msgs);
-			case RobotmodelPackage.SCRIPT__STATEMENTS:
-				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+			case RobotmodelPackage.SCRIPT__COMMAND:
+				return ((InternalEList<?>)getCommand()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -158,8 +158,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 		switch (featureID) {
 			case RobotmodelPackage.SCRIPT__NAME:
 				return getName();
-			case RobotmodelPackage.SCRIPT__STATEMENTS:
-				return getStatements();
+			case RobotmodelPackage.SCRIPT__COMMAND:
+				return getCommand();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -176,9 +176,9 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 			case RobotmodelPackage.SCRIPT__NAME:
 				setName((Name)newValue);
 				return;
-			case RobotmodelPackage.SCRIPT__STATEMENTS:
-				getStatements().clear();
-				getStatements().addAll((Collection<? extends Statement>)newValue);
+			case RobotmodelPackage.SCRIPT__COMMAND:
+				getCommand().clear();
+				getCommand().addAll((Collection<? extends Statement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,8 +195,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 			case RobotmodelPackage.SCRIPT__NAME:
 				setName((Name)null);
 				return;
-			case RobotmodelPackage.SCRIPT__STATEMENTS:
-				getStatements().clear();
+			case RobotmodelPackage.SCRIPT__COMMAND:
+				getCommand().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -212,8 +212,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 		switch (featureID) {
 			case RobotmodelPackage.SCRIPT__NAME:
 				return name != null;
-			case RobotmodelPackage.SCRIPT__STATEMENTS:
-				return statements != null && !statements.isEmpty();
+			case RobotmodelPackage.SCRIPT__COMMAND:
+				return command != null && !command.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,0 +1,17 @@
+Script sample runs as
+//	# start of the file
+
+	step
+	step
+	trace "Just did two steps"
+
+	while not wall ahead do
+		step
+		if mark do
+			trace "mark found"
+			pick
+		else do drop
+		end
+	end
+
+end

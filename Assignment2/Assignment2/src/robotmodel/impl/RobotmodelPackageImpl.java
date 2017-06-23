@@ -36,7 +36,6 @@ import robotmodel.RobotmodelFactory;
 import robotmodel.RobotmodelPackage;
 import robotmodel.Script;
 import robotmodel.Statement;
-import robotmodel.StringExpression;
 import robotmodel.TraceCommand;
 import robotmodel.TraceLiteral;
 import robotmodel.WallAheadExpression;
@@ -147,20 +146,6 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * @generated
 	 */
 	private EClass layoutEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass integerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stringExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -351,7 +336,7 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScript_Statements() {
+	public EReference getScript_Command() {
 		return (EReference)scriptEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -378,7 +363,7 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIfStatement_IfExpression() {
+	public EReference getIfStatement_Condition() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -387,7 +372,7 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIfStatement_Statements() {
+	public EReference getIfStatement_Command() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -396,7 +381,7 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIfStatement_Statements2() {
+	public EReference getIfStatement_Command2() {
 		return (EReference)ifStatementEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -414,7 +399,7 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWhileStatement_WhileExpression() {
+	public EReference getWhileStatement_Condition() {
 		return (EReference)whileStatementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -423,7 +408,7 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getWhileStatement_Statements() {
+	public EReference getWhileStatement_Command() {
 		return (EReference)whileStatementEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -441,7 +426,7 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRepeatStatement_Statements() {
+	public EReference getRepeatStatement_Command() {
 		return (EReference)repeatStatementEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -450,8 +435,8 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRepeatStatement_Integer() {
-		return (EReference)repeatStatementEClass.getEStructuralFeatures().get(1);
+	public EAttribute getRepeatStatement_Condition() {
+		return (EAttribute)repeatStatementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -477,6 +462,15 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComment_Command() {
+		return (EAttribute)commentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTraceCommand() {
 		return traceCommandEClass;
 	}
@@ -495,8 +489,8 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTraceCommand_String() {
-		return (EReference)traceCommandEClass.getEStructuralFeatures().get(1);
+	public EAttribute getTraceCommand_Command() {
+		return (EAttribute)traceCommandEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -513,7 +507,7 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAtomicCommand_Literal() {
+	public EAttribute getAtomicCommand_Command() {
 		return (EAttribute)atomicCommandEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -596,24 +590,6 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 */
 	public EClass getLayout() {
 		return layoutEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getInteger() {
-		return integerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStringExpression() {
-		return stringExpressionEClass;
 	}
 
 	/**
@@ -711,8 +687,8 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConstructionStatement_Integers() {
-		return (EReference)constructionStatementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getConstructionStatement_Command() {
+		return (EAttribute)constructionStatementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -720,8 +696,17 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConstructionStatement_Command() {
+	public EAttribute getConstructionStatement_X() {
 		return (EAttribute)constructionStatementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConstructionStatement_Y() {
+		return (EAttribute)constructionStatementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -844,33 +829,34 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 		// Create classes and their features
 		scriptEClass = createEClass(SCRIPT);
 		createEReference(scriptEClass, SCRIPT__NAME);
-		createEReference(scriptEClass, SCRIPT__STATEMENTS);
+		createEReference(scriptEClass, SCRIPT__COMMAND);
 
 		statementEClass = createEClass(STATEMENT);
 
 		ifStatementEClass = createEClass(IF_STATEMENT);
-		createEReference(ifStatementEClass, IF_STATEMENT__IF_EXPRESSION);
-		createEReference(ifStatementEClass, IF_STATEMENT__STATEMENTS);
-		createEReference(ifStatementEClass, IF_STATEMENT__STATEMENTS2);
+		createEReference(ifStatementEClass, IF_STATEMENT__CONDITION);
+		createEReference(ifStatementEClass, IF_STATEMENT__COMMAND);
+		createEReference(ifStatementEClass, IF_STATEMENT__COMMAND2);
 
 		whileStatementEClass = createEClass(WHILE_STATEMENT);
-		createEReference(whileStatementEClass, WHILE_STATEMENT__WHILE_EXPRESSION);
-		createEReference(whileStatementEClass, WHILE_STATEMENT__STATEMENTS);
+		createEReference(whileStatementEClass, WHILE_STATEMENT__CONDITION);
+		createEReference(whileStatementEClass, WHILE_STATEMENT__COMMAND);
 
 		repeatStatementEClass = createEClass(REPEAT_STATEMENT);
-		createEReference(repeatStatementEClass, REPEAT_STATEMENT__STATEMENTS);
-		createEReference(repeatStatementEClass, REPEAT_STATEMENT__INTEGER);
+		createEReference(repeatStatementEClass, REPEAT_STATEMENT__COMMAND);
+		createEAttribute(repeatStatementEClass, REPEAT_STATEMENT__CONDITION);
 
 		commandEClass = createEClass(COMMAND);
 
 		commentEClass = createEClass(COMMENT);
+		createEAttribute(commentEClass, COMMENT__COMMAND);
 
 		traceCommandEClass = createEClass(TRACE_COMMAND);
 		createEAttribute(traceCommandEClass, TRACE_COMMAND__TRACE_LITERAL);
-		createEReference(traceCommandEClass, TRACE_COMMAND__STRING);
+		createEAttribute(traceCommandEClass, TRACE_COMMAND__COMMAND);
 
 		atomicCommandEClass = createEClass(ATOMIC_COMMAND);
-		createEAttribute(atomicCommandEClass, ATOMIC_COMMAND__LITERAL);
+		createEAttribute(atomicCommandEClass, ATOMIC_COMMAND__COMMAND);
 
 		expressionEClass = createEClass(EXPRESSION);
 
@@ -886,10 +872,6 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 
 		layoutEClass = createEClass(LAYOUT);
 
-		integerEClass = createEClass(INTEGER);
-
-		stringExpressionEClass = createEClass(STRING_EXPRESSION);
-
 		headingExpressionEClass = createEClass(HEADING_EXPRESSION);
 		createEAttribute(headingExpressionEClass, HEADING_EXPRESSION__HEADING_LITERAL);
 		createEAttribute(headingExpressionEClass, HEADING_EXPRESSION__DIRECTION_LITERAL);
@@ -904,8 +886,9 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 		nameEClass = createEClass(NAME);
 
 		constructionStatementEClass = createEClass(CONSTRUCTION_STATEMENT);
-		createEReference(constructionStatementEClass, CONSTRUCTION_STATEMENT__INTEGERS);
 		createEAttribute(constructionStatementEClass, CONSTRUCTION_STATEMENT__COMMAND);
+		createEAttribute(constructionStatementEClass, CONSTRUCTION_STATEMENT__X);
+		createEAttribute(constructionStatementEClass, CONSTRUCTION_STATEMENT__Y);
 
 		// Create enums
 		traceLiteralEEnum = createEEnum(TRACE_LITERAL);
@@ -966,33 +949,34 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getScript_Name(), this.getName_(), null, "name", null, 1, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScript_Statements(), this.getStatement(), null, "statements", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScript_Command(), this.getStatement(), null, "command", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIfStatement_IfExpression(), this.getExpression(), null, "ifExpression", null, 1, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIfStatement_Statements(), this.getStatement(), null, "statements", null, 1, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIfStatement_Statements2(), this.getStatement(), null, "statements2", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfStatement_Condition(), this.getExpression(), null, "condition", null, 1, 1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfStatement_Command(), this.getStatement(), null, "command", null, 1, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfStatement_Command2(), this.getStatement(), null, "command2", null, 0, -1, IfStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getWhileStatement_WhileExpression(), this.getExpression(), null, "whileExpression", null, 1, 1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getWhileStatement_Statements(), this.getStatement(), null, "statements", null, 0, -1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWhileStatement_Condition(), this.getExpression(), null, "condition", null, 1, 1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getWhileStatement_Command(), this.getStatement(), null, "command", null, 0, -1, WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(repeatStatementEClass, RepeatStatement.class, "RepeatStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRepeatStatement_Statements(), this.getStatement(), null, "statements", null, 0, -1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRepeatStatement_Integer(), this.getInteger(), null, "integer", null, 1, 1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRepeatStatement_Command(), this.getStatement(), null, "command", null, 0, -1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRepeatStatement_Condition(), ecorePackage.getEInt(), "condition", null, 0, 1, RepeatStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commandEClass, Command.class, "Command", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getComment_Command(), ecorePackage.getEString(), "command", null, 0, 1, Comment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(traceCommandEClass, TraceCommand.class, "TraceCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTraceCommand_TraceLiteral(), this.getTraceLiteral(), "traceLiteral", null, 1, 1, TraceCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTraceCommand_String(), this.getStringExpression(), null, "string", null, 1, 1, TraceCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTraceCommand_Command(), ecorePackage.getEString(), "command", null, 0, 1, TraceCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(atomicCommandEClass, AtomicCommand.class, "AtomicCommand", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAtomicCommand_Literal(), this.getCommandLiteral(), "literal", null, 1, 1, AtomicCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAtomicCommand_Command(), this.getCommandLiteral(), "command", null, 1, 1, AtomicCommand.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1008,10 +992,6 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 
 		initEClass(layoutEClass, Layout.class, "Layout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(integerEClass, robotmodel.Integer.class, "Integer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(stringExpressionEClass, StringExpression.class, "StringExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(headingExpressionEClass, HeadingExpression.class, "HeadingExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getHeadingExpression_HeadingLiteral(), this.getHeadingLiteral(), "headingLiteral", null, 1, 1, HeadingExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getHeadingExpression_DirectionLiteral(), this.getDirectionLiteral(), "directionLiteral", null, 1, 1, HeadingExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1026,8 +1006,9 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 		initEClass(nameEClass, Name.class, "Name", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(constructionStatementEClass, ConstructionStatement.class, "ConstructionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConstructionStatement_Integers(), this.getInteger(), null, "integers", null, 2, 2, ConstructionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConstructionStatement_Command(), this.getGridLiteral(), "command", null, 0, 1, ConstructionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConstructionStatement_X(), ecorePackage.getEInt(), "x", null, 1, 1, ConstructionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConstructionStatement_Y(), ecorePackage.getEInt(), "y", null, 1, 1, ConstructionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(traceLiteralEEnum, TraceLiteral.class, "TraceLiteral");

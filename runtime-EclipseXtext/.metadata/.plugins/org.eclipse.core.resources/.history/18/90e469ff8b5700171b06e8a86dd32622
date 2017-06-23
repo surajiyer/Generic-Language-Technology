@@ -1,0 +1,10 @@
+rule Robot2Java 
+	transform script : {
+	}
+	
+	// The EGL template to be invoked
+	template : "robot2java.egl"
+	
+	// Output file
+	target : "gen/" + book.e_id.text + ".html"
+}

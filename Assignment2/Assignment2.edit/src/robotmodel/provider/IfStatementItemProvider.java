@@ -9,9 +9,13 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
-import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+
+import robotmodel.IfStatement;
+import robotmodel.RobotmodelFactory;
 import robotmodel.RobotmodelPackage;
 
 /**
@@ -42,77 +46,40 @@ public class IfStatementItemProvider extends StatementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIfExpressionPropertyDescriptor(object);
-			addStatementsPropertyDescriptor(object);
-			addStatements2PropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the If Expression feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIfExpressionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IfStatement_ifExpression_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_ifExpression_feature", "_UI_IfStatement_type"),
-				 RobotmodelPackage.Literals.IF_STATEMENT__IF_EXPRESSION,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(RobotmodelPackage.Literals.IF_STATEMENT__CONDITION);
+			childrenFeatures.add(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND);
+			childrenFeatures.add(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND2);
+		}
+		return childrenFeatures;
 	}
 
 	/**
-	 * This adds a property descriptor for the Statements feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStatementsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IfStatement_statements_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_statements_feature", "_UI_IfStatement_type"),
-				 RobotmodelPackage.Literals.IF_STATEMENT__STATEMENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
 
-	/**
-	 * This adds a property descriptor for the Statements2 feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addStatements2PropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IfStatement_statements2_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IfStatement_statements2_feature", "_UI_IfStatement_type"),
-				 RobotmodelPackage.Literals.IF_STATEMENT__STATEMENTS2,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -148,6 +115,14 @@ public class IfStatementItemProvider extends StatementItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(IfStatement.class)) {
+			case RobotmodelPackage.IF_STATEMENT__CONDITION:
+			case RobotmodelPackage.IF_STATEMENT__COMMAND:
+			case RobotmodelPackage.IF_STATEMENT__COMMAND2:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -161,6 +136,124 @@ public class IfStatementItemProvider extends StatementItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__CONDITION,
+				 RobotmodelFactory.eINSTANCE.createNegatedExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__CONDITION,
+				 RobotmodelFactory.eINSTANCE.createBinaryExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__CONDITION,
+				 RobotmodelFactory.eINSTANCE.createHeadingExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__CONDITION,
+				 RobotmodelFactory.eINSTANCE.createWallAheadExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__CONDITION,
+				 RobotmodelFactory.eINSTANCE.createNormalExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createIfStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createWhileStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createRepeatStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createComment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createTraceCommand()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createAtomicCommand()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createConstructionStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND2,
+				 RobotmodelFactory.eINSTANCE.createIfStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND2,
+				 RobotmodelFactory.eINSTANCE.createWhileStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND2,
+				 RobotmodelFactory.eINSTANCE.createRepeatStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND2,
+				 RobotmodelFactory.eINSTANCE.createComment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND2,
+				 RobotmodelFactory.eINSTANCE.createTraceCommand()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND2,
+				 RobotmodelFactory.eINSTANCE.createAtomicCommand()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.IF_STATEMENT__COMMAND2,
+				 RobotmodelFactory.eINSTANCE.createConstructionStatement()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == RobotmodelPackage.Literals.IF_STATEMENT__COMMAND ||
+			childFeature == RobotmodelPackage.Literals.IF_STATEMENT__COMMAND2;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

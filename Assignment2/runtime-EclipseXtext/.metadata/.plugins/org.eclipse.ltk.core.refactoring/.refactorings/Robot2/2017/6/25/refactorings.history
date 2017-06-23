@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Robot2/InputModels&apos; to &apos;inputModels&apos;" description="Rename resource &apos;InputModels&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="InputModels" name="inputModels" stamp="1498055648147" updateReferences="true"/>
+</session>

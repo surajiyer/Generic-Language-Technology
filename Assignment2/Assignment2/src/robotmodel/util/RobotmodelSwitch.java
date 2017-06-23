@@ -7,27 +7,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import robotmodel.AtomicCommand;
-import robotmodel.AtomicExpression;
-import robotmodel.BinaryExpression;
-import robotmodel.Command;
-import robotmodel.Comment;
-import robotmodel.ConstructionStatement;
-import robotmodel.Expression;
-import robotmodel.HeadingExpression;
-import robotmodel.IfStatement;
-import robotmodel.Layout;
-import robotmodel.Name;
-import robotmodel.NegatedExpression;
-import robotmodel.NormalExpression;
-import robotmodel.RepeatStatement;
-import robotmodel.RobotmodelPackage;
-import robotmodel.Script;
-import robotmodel.Statement;
-import robotmodel.StringExpression;
-import robotmodel.TraceCommand;
-import robotmodel.WallAheadExpression;
-import robotmodel.WhileStatement;
+import robotmodel.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -180,18 +160,6 @@ public class RobotmodelSwitch<T> extends Switch<T> {
 			case RobotmodelPackage.LAYOUT: {
 				Layout layout = (Layout)theEObject;
 				T result = caseLayout(layout);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RobotmodelPackage.INTEGER: {
-				robotmodel.Integer integer = (robotmodel.Integer)theEObject;
-				T result = caseInteger(integer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case RobotmodelPackage.STRING_EXPRESSION: {
-				StringExpression stringExpression = (StringExpression)theEObject;
-				T result = caseStringExpression(stringExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -443,36 +411,6 @@ public class RobotmodelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLayout(Layout object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Integer</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Integer</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseInteger(robotmodel.Integer object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>String Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>String Expression</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStringExpression(StringExpression object) {
 		return null;
 	}
 

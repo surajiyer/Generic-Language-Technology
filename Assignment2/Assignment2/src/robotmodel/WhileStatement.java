@@ -13,8 +13,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link robotmodel.WhileStatement#getWhileExpression <em>While Expression</em>}</li>
- *   <li>{@link robotmodel.WhileStatement#getStatements <em>Statements</em>}</li>
+ *   <li>{@link robotmodel.WhileStatement#getCondition <em>Condition</em>}</li>
+ *   <li>{@link robotmodel.WhileStatement#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @see robotmodel.RobotmodelPackage#getWhileStatement()
@@ -23,45 +23,45 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface WhileStatement extends Statement {
 	/**
-	 * Returns the value of the '<em><b>While Expression</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>While Expression</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Condition</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>While Expression</em>' containment reference.
-	 * @see #setWhileExpression(Expression)
-	 * @see robotmodel.RobotmodelPackage#getWhileStatement_WhileExpression()
+	 * @return the value of the '<em>Condition</em>' containment reference.
+	 * @see #setCondition(Expression)
+	 * @see robotmodel.RobotmodelPackage#getWhileStatement_Condition()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Expression getWhileExpression();
+	Expression getCondition();
 
 	/**
-	 * Sets the value of the '{@link robotmodel.WhileStatement#getWhileExpression <em>While Expression</em>}' containment reference.
+	 * Sets the value of the '{@link robotmodel.WhileStatement#getCondition <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>While Expression</em>' containment reference.
-	 * @see #getWhileExpression()
+	 * @param value the new value of the '<em>Condition</em>' containment reference.
+	 * @see #getCondition()
 	 * @generated
 	 */
-	void setWhileExpression(Expression value);
+	void setCondition(Expression value);
 
 	/**
-	 * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Command</b></em>' containment reference list.
 	 * The list contents are of type {@link robotmodel.Statement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Command</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Statements</em>' containment reference list.
-	 * @see robotmodel.RobotmodelPackage#getWhileStatement_Statements()
+	 * @return the value of the '<em>Command</em>' containment reference list.
+	 * @see robotmodel.RobotmodelPackage#getWhileStatement_Command()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Statement> getStatements();
+	EList<Statement> getCommand();
 
 } // WhileStatement

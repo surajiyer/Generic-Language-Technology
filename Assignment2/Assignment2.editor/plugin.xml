@@ -28,7 +28,7 @@
             id="robotmodel.presentation.RobotmodelEditorID"
             name="%_UI_RobotmodelEditor_label"
             icon="icons/full/obj16/RobotmodelModelFile.gif"
-            extensions="robotmodel"
+            extensions="robot"
             class="robotmodel.presentation.RobotmodelEditor"
             contributorClass="robotmodel.presentation.RobotmodelActionBarContributor">
       </editor>

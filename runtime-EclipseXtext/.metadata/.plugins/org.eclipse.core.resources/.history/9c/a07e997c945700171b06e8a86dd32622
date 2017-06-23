@@ -1,0 +1,9 @@
+rule Robot2Java 
+	transform script : t_Script {
+	
+	// The EGL template to be invoked
+	template : "robot2Java.egl"
+	
+	// Output file
+	target : "outputModels/" + script.name + ".java"
+}

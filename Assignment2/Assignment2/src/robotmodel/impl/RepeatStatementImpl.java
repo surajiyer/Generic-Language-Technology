@@ -29,32 +29,42 @@ import robotmodel.Statement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link robotmodel.impl.RepeatStatementImpl#getStatements <em>Statements</em>}</li>
- *   <li>{@link robotmodel.impl.RepeatStatementImpl#getInteger <em>Integer</em>}</li>
+ *   <li>{@link robotmodel.impl.RepeatStatementImpl#getCommand <em>Command</em>}</li>
+ *   <li>{@link robotmodel.impl.RepeatStatementImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RepeatStatementImpl extends StatementImpl implements RepeatStatement {
 	/**
-	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+	 * The cached value of the '{@link #getCommand() <em>Command</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatements()
+	 * @see #getCommand()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Statement> statements;
+	protected EList<Statement> command;
 
 	/**
-	 * The cached value of the '{@link #getInteger() <em>Integer</em>}' containment reference.
+	 * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInteger()
+	 * @see #getCondition()
 	 * @generated
 	 * @ordered
 	 */
-	protected robotmodel.Integer integer;
+	protected static final int CONDITION_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected int condition = CONDITION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,11 +90,11 @@ public class RepeatStatementImpl extends StatementImpl implements RepeatStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Statement> getStatements() {
-		if (statements == null) {
-			statements = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.REPEAT_STATEMENT__STATEMENTS);
+	public EList<Statement> getCommand() {
+		if (command == null) {
+			command = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.REPEAT_STATEMENT__COMMAND);
 		}
-		return statements;
+		return command;
 	}
 
 	/**
@@ -92,8 +102,8 @@ public class RepeatStatementImpl extends StatementImpl implements RepeatStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public robotmodel.Integer getInteger() {
-		return integer;
+	public int getCondition() {
+		return condition;
 	}
 
 	/**
@@ -101,33 +111,11 @@ public class RepeatStatementImpl extends StatementImpl implements RepeatStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetInteger(robotmodel.Integer newInteger, NotificationChain msgs) {
-		robotmodel.Integer oldInteger = integer;
-		integer = newInteger;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotmodelPackage.REPEAT_STATEMENT__INTEGER, oldInteger, newInteger);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setInteger(robotmodel.Integer newInteger) {
-		if (newInteger != integer) {
-			NotificationChain msgs = null;
-			if (integer != null)
-				msgs = ((InternalEObject)integer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.REPEAT_STATEMENT__INTEGER, null, msgs);
-			if (newInteger != null)
-				msgs = ((InternalEObject)newInteger).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.REPEAT_STATEMENT__INTEGER, null, msgs);
-			msgs = basicSetInteger(newInteger, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.REPEAT_STATEMENT__INTEGER, newInteger, newInteger));
+	public void setCondition(int newCondition) {
+		int oldCondition = condition;
+		condition = newCondition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.REPEAT_STATEMENT__CONDITION, oldCondition, condition));
 	}
 
 	/**
@@ -138,10 +126,8 @@ public class RepeatStatementImpl extends StatementImpl implements RepeatStatemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RobotmodelPackage.REPEAT_STATEMENT__STATEMENTS:
-				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
-			case RobotmodelPackage.REPEAT_STATEMENT__INTEGER:
-				return basicSetInteger(null, msgs);
+			case RobotmodelPackage.REPEAT_STATEMENT__COMMAND:
+				return ((InternalEList<?>)getCommand()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -154,10 +140,10 @@ public class RepeatStatementImpl extends StatementImpl implements RepeatStatemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RobotmodelPackage.REPEAT_STATEMENT__STATEMENTS:
-				return getStatements();
-			case RobotmodelPackage.REPEAT_STATEMENT__INTEGER:
-				return getInteger();
+			case RobotmodelPackage.REPEAT_STATEMENT__COMMAND:
+				return getCommand();
+			case RobotmodelPackage.REPEAT_STATEMENT__CONDITION:
+				return getCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,12 +157,12 @@ public class RepeatStatementImpl extends StatementImpl implements RepeatStatemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RobotmodelPackage.REPEAT_STATEMENT__STATEMENTS:
-				getStatements().clear();
-				getStatements().addAll((Collection<? extends Statement>)newValue);
+			case RobotmodelPackage.REPEAT_STATEMENT__COMMAND:
+				getCommand().clear();
+				getCommand().addAll((Collection<? extends Statement>)newValue);
 				return;
-			case RobotmodelPackage.REPEAT_STATEMENT__INTEGER:
-				setInteger((robotmodel.Integer)newValue);
+			case RobotmodelPackage.REPEAT_STATEMENT__CONDITION:
+				setCondition((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,11 +176,11 @@ public class RepeatStatementImpl extends StatementImpl implements RepeatStatemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.REPEAT_STATEMENT__STATEMENTS:
-				getStatements().clear();
+			case RobotmodelPackage.REPEAT_STATEMENT__COMMAND:
+				getCommand().clear();
 				return;
-			case RobotmodelPackage.REPEAT_STATEMENT__INTEGER:
-				setInteger((robotmodel.Integer)null);
+			case RobotmodelPackage.REPEAT_STATEMENT__CONDITION:
+				setCondition(CONDITION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -208,12 +194,28 @@ public class RepeatStatementImpl extends StatementImpl implements RepeatStatemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.REPEAT_STATEMENT__STATEMENTS:
-				return statements != null && !statements.isEmpty();
-			case RobotmodelPackage.REPEAT_STATEMENT__INTEGER:
-				return integer != null;
+			case RobotmodelPackage.REPEAT_STATEMENT__COMMAND:
+				return command != null && !command.isEmpty();
+			case RobotmodelPackage.REPEAT_STATEMENT__CONDITION:
+				return condition != CONDITION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (condition: ");
+		result.append(condition);
+		result.append(')');
+		return result.toString();
 	}
 
 } //RepeatStatementImpl

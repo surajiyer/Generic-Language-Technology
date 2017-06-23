@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: nl.tue.robot
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: nl.tue.robot; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: Assignment2,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: nl.tue.robot.serializer,
+ nl.tue.robot.parser.antlr.internal,
+ nl.tue.robot.services,
+ nl.tue.robot.parser.antlr,
+ nl.tue.robot.scoping,
+ nl.tue.robot.validation,
+ nl.tue.robot,
+ nl.tue.robot.generator,
+ nl.tue.robot.formatting2
+Import-Package: org.apache.log4j

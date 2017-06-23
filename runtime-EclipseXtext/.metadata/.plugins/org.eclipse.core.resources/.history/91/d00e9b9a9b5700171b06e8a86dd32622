@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<Script xmlns:kaja="http://www.example.org/kaja" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="SampleBuildStep" xmi:version="2.0">
+  <commandlist abc="xyz">
+    <commands x="1" xsi:type="kaja:BuildWall" y="4"/>
+    <commands xsi:type="kaja:Step"/>
+  </commandlist>
+  <yolo>
+  </yolo>
+</Script>

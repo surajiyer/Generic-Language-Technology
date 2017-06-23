@@ -13,8 +13,8 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link robotmodel.RepeatStatement#getStatements <em>Statements</em>}</li>
- *   <li>{@link robotmodel.RepeatStatement#getInteger <em>Integer</em>}</li>
+ *   <li>{@link robotmodel.RepeatStatement#getCommand <em>Command</em>}</li>
+ *   <li>{@link robotmodel.RepeatStatement#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @see robotmodel.RobotmodelPackage#getRepeatStatement()
@@ -23,45 +23,45 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface RepeatStatement extends Statement {
 	/**
-	 * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Command</b></em>' containment reference list.
 	 * The list contents are of type {@link robotmodel.Statement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Command</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Statements</em>' containment reference list.
-	 * @see robotmodel.RobotmodelPackage#getRepeatStatement_Statements()
+	 * @return the value of the '<em>Command</em>' containment reference list.
+	 * @see robotmodel.RobotmodelPackage#getRepeatStatement_Command()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Statement> getStatements();
+	EList<Statement> getCommand();
 
 	/**
-	 * Returns the value of the '<em><b>Integer</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Condition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Integer</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Condition</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Integer</em>' containment reference.
-	 * @see #setInteger(robotmodel.Integer)
-	 * @see robotmodel.RobotmodelPackage#getRepeatStatement_Integer()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Condition</em>' attribute.
+	 * @see #setCondition(int)
+	 * @see robotmodel.RobotmodelPackage#getRepeatStatement_Condition()
+	 * @model
 	 * @generated
 	 */
-	robotmodel.Integer getInteger();
+	int getCondition();
 
 	/**
-	 * Sets the value of the '{@link robotmodel.RepeatStatement#getInteger <em>Integer</em>}' containment reference.
+	 * Sets the value of the '{@link robotmodel.RepeatStatement#getCondition <em>Condition</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Integer</em>' containment reference.
-	 * @see #getInteger()
+	 * @param value the new value of the '<em>Condition</em>' attribute.
+	 * @see #getCondition()
 	 * @generated
 	 */
-	void setInteger(robotmodel.Integer value);
+	void setCondition(int value);
 
 } // RepeatStatement

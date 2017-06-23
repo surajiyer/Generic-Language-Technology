@@ -1,0 +1,9 @@
+rule Robot2Java 
+	transform script : getAttribute("kaja:Script") {
+	
+	// The EGL template to be invoked
+	template : "robot2Java.egl"
+	
+	// Output file
+	target : "gen/" + book.e_id.text + ".html"
+}

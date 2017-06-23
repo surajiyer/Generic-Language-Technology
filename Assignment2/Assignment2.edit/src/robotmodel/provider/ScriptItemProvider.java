@@ -11,6 +11,8 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -19,8 +21,11 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import robotmodel.RobotmodelFactory;
 import robotmodel.RobotmodelPackage;
+import robotmodel.Script;
 
 /**
  * This is the item provider adapter for a {@link robotmodel.Script} object.
@@ -58,7 +63,6 @@ public class ScriptItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addStatementsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -86,25 +90,33 @@ public class ScriptItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Statements feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStatementsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Script_statements_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Script_statements_feature", "_UI_Script_type"),
-				 RobotmodelPackage.Literals.SCRIPT__STATEMENTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(RobotmodelPackage.Literals.SCRIPT__COMMAND);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
@@ -140,6 +152,12 @@ public class ScriptItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Script.class)) {
+			case RobotmodelPackage.SCRIPT__COMMAND:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 
@@ -153,6 +171,41 @@ public class ScriptItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.SCRIPT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createIfStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.SCRIPT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createWhileStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.SCRIPT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createRepeatStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.SCRIPT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createComment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.SCRIPT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createTraceCommand()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.SCRIPT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createAtomicCommand()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(RobotmodelPackage.Literals.SCRIPT__COMMAND,
+				 RobotmodelFactory.eINSTANCE.createConstructionStatement()));
 	}
 
 	/**

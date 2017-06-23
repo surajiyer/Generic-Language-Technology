@@ -2,20 +2,11 @@
  */
 package robotmodel.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import robotmodel.ConstructionStatement;
 import robotmodel.GridLiteral;
@@ -29,23 +20,14 @@ import robotmodel.RobotmodelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link robotmodel.impl.ConstructionStatementImpl#getIntegers <em>Integers</em>}</li>
  *   <li>{@link robotmodel.impl.ConstructionStatementImpl#getCommand <em>Command</em>}</li>
+ *   <li>{@link robotmodel.impl.ConstructionStatementImpl#getX <em>X</em>}</li>
+ *   <li>{@link robotmodel.impl.ConstructionStatementImpl#getY <em>Y</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ConstructionStatementImpl extends StatementImpl implements ConstructionStatement {
-	/**
-	 * The cached value of the '{@link #getIntegers() <em>Integers</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntegers()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<robotmodel.Integer> integers;
-
 	/**
 	 * The default value of the '{@link #getCommand() <em>Command</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,6 +49,46 @@ public class ConstructionStatementImpl extends StatementImpl implements Construc
 	protected GridLiteral command = COMMAND_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getX()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int X_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getX() <em>X</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getX()
+	 * @generated
+	 * @ordered
+	 */
+	protected int x = X_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getY() <em>Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getY()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int Y_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getY()
+	 * @generated
+	 * @ordered
+	 */
+	protected int y = Y_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -83,18 +105,6 @@ public class ConstructionStatementImpl extends StatementImpl implements Construc
 	@Override
 	protected EClass eStaticClass() {
 		return RobotmodelPackage.Literals.CONSTRUCTION_STATEMENT;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<robotmodel.Integer> getIntegers() {
-		if (integers == null) {
-			integers = new EObjectContainmentEList<robotmodel.Integer>(robotmodel.Integer.class, this, RobotmodelPackage.CONSTRUCTION_STATEMENT__INTEGERS);
-		}
-		return integers;
 	}
 
 	/**
@@ -123,13 +133,41 @@ public class ConstructionStatementImpl extends StatementImpl implements Construc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case RobotmodelPackage.CONSTRUCTION_STATEMENT__INTEGERS:
-				return ((InternalEList<?>)getIntegers()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public int getX() {
+		return x;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setX(int newX) {
+		int oldX = x;
+		x = newX;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.CONSTRUCTION_STATEMENT__X, oldX, x));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getY() {
+		return y;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setY(int newY) {
+		int oldY = y;
+		y = newY;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.CONSTRUCTION_STATEMENT__Y, oldY, y));
 	}
 
 	/**
@@ -140,10 +178,12 @@ public class ConstructionStatementImpl extends StatementImpl implements Construc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RobotmodelPackage.CONSTRUCTION_STATEMENT__INTEGERS:
-				return getIntegers();
 			case RobotmodelPackage.CONSTRUCTION_STATEMENT__COMMAND:
 				return getCommand();
+			case RobotmodelPackage.CONSTRUCTION_STATEMENT__X:
+				return getX();
+			case RobotmodelPackage.CONSTRUCTION_STATEMENT__Y:
+				return getY();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -153,16 +193,17 @@ public class ConstructionStatementImpl extends StatementImpl implements Construc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RobotmodelPackage.CONSTRUCTION_STATEMENT__INTEGERS:
-				getIntegers().clear();
-				getIntegers().addAll((Collection<? extends robotmodel.Integer>)newValue);
-				return;
 			case RobotmodelPackage.CONSTRUCTION_STATEMENT__COMMAND:
 				setCommand((GridLiteral)newValue);
+				return;
+			case RobotmodelPackage.CONSTRUCTION_STATEMENT__X:
+				setX((Integer)newValue);
+				return;
+			case RobotmodelPackage.CONSTRUCTION_STATEMENT__Y:
+				setY((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,11 +217,14 @@ public class ConstructionStatementImpl extends StatementImpl implements Construc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.CONSTRUCTION_STATEMENT__INTEGERS:
-				getIntegers().clear();
-				return;
 			case RobotmodelPackage.CONSTRUCTION_STATEMENT__COMMAND:
 				setCommand(COMMAND_EDEFAULT);
+				return;
+			case RobotmodelPackage.CONSTRUCTION_STATEMENT__X:
+				setX(X_EDEFAULT);
+				return;
+			case RobotmodelPackage.CONSTRUCTION_STATEMENT__Y:
+				setY(Y_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -194,10 +238,12 @@ public class ConstructionStatementImpl extends StatementImpl implements Construc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.CONSTRUCTION_STATEMENT__INTEGERS:
-				return integers != null && !integers.isEmpty();
 			case RobotmodelPackage.CONSTRUCTION_STATEMENT__COMMAND:
 				return command != COMMAND_EDEFAULT;
+			case RobotmodelPackage.CONSTRUCTION_STATEMENT__X:
+				return x != X_EDEFAULT;
+			case RobotmodelPackage.CONSTRUCTION_STATEMENT__Y:
+				return y != Y_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,6 +260,10 @@ public class ConstructionStatementImpl extends StatementImpl implements Construc
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (command: ");
 		result.append(command);
+		result.append(", x: ");
+		result.append(x);
+		result.append(", y: ");
+		result.append(y);
 		result.append(')');
 		return result.toString();
 	}

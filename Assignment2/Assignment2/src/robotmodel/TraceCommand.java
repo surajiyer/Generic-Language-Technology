@@ -13,7 +13,7 @@ package robotmodel;
  * </p>
  * <ul>
  *   <li>{@link robotmodel.TraceCommand#getTraceLiteral <em>Trace Literal</em>}</li>
- *   <li>{@link robotmodel.TraceCommand#getString <em>String</em>}</li>
+ *   <li>{@link robotmodel.TraceCommand#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @see robotmodel.RobotmodelPackage#getTraceCommand()
@@ -51,29 +51,29 @@ public interface TraceCommand extends Command {
 	void setTraceLiteral(TraceLiteral value);
 
 	/**
-	 * Returns the value of the '<em><b>String</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Command</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>String</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Command</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>String</em>' containment reference.
-	 * @see #setString(StringExpression)
-	 * @see robotmodel.RobotmodelPackage#getTraceCommand_String()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Command</em>' attribute.
+	 * @see #setCommand(String)
+	 * @see robotmodel.RobotmodelPackage#getTraceCommand_Command()
+	 * @model
 	 * @generated
 	 */
-	StringExpression getString();
+	String getCommand();
 
 	/**
-	 * Sets the value of the '{@link robotmodel.TraceCommand#getString <em>String</em>}' containment reference.
+	 * Sets the value of the '{@link robotmodel.TraceCommand#getCommand <em>Command</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>String</em>' containment reference.
-	 * @see #getString()
+	 * @param value the new value of the '<em>Command</em>' attribute.
+	 * @see #getCommand()
 	 * @generated
 	 */
-	void setString(StringExpression value);
+	void setCommand(String value);
 
 } // TraceCommand

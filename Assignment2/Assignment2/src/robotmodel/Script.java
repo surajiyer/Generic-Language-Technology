@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link robotmodel.Script#getName <em>Name</em>}</li>
- *   <li>{@link robotmodel.Script#getStatements <em>Statements</em>}</li>
+ *   <li>{@link robotmodel.Script#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @see robotmodel.RobotmodelPackage#getScript()
@@ -51,19 +51,19 @@ public interface Script extends EObject {
 	void setName(Name value);
 
 	/**
-	 * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Command</b></em>' containment reference list.
 	 * The list contents are of type {@link robotmodel.Statement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Command</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Statements</em>' containment reference list.
-	 * @see robotmodel.RobotmodelPackage#getScript_Statements()
+	 * @return the value of the '<em>Command</em>' containment reference list.
+	 * @see robotmodel.RobotmodelPackage#getScript_Command()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Statement> getStatements();
+	EList<Statement> getCommand();
 
 } // Script

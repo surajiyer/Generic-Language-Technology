@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="robotmodel" nsURI="plugin://glt.robot" nsPrefix="pref">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="robotmodel" nsURI="plugin://glt.robot" nsPrefix="">
   <eClassifiers xsi:type="ecore:EClass" name="Script">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" lowerBound="1" eType="#//Name"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command" upperBound="-1"
         eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="IfStatement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ifExpression" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
         eType="#//Expression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command" lowerBound="1"
         upperBound="-1" eType="#//Statement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements2" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command2" upperBound="-1"
         eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WhileStatement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="whileExpression" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
         eType="#//Expression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command" upperBound="-1"
         eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RepeatStatement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="command" upperBound="-1"
         eType="#//Statement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="integer" lowerBound="1"
-        eType="#//Integer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Command" abstract="true" eSuperTypes="#//Statement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Command">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TraceCommand" eSuperTypes="#//Command">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="traceLiteral" lowerBound="1"
         eType="#//TraceLiteral"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="string" lowerBound="1"
-        eType="#//StringExpression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AtomicCommand" eSuperTypes="#//Command">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literal" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" lowerBound="1"
         eType="#//CommandLiteral"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TraceLiteral">
@@ -68,8 +68,6 @@
     <eLiterals name="or"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Layout"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Integer"/>
-  <eClassifiers xsi:type="ecore:EClass" name="StringExpression"/>
   <eClassifiers xsi:type="ecore:EEnum" name="Keyword">
     <eLiterals name="Script" literal="Script"/>
     <eLiterals name="runs" value="1" literal="runs"/>
@@ -131,8 +129,8 @@
     <eLiterals name="dropMark"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConstructionStatement" eSuperTypes="#//Statement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="integers" lowerBound="2"
-        upperBound="2" eType="#//Integer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="command" eType="#//GridLiteral"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>

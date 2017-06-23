@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Script xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="plugin://glt.robot">
+  <name/>
+  <statements xsi:type="Comment" string="# start of the file&#xD;&#xA;"/>
+  <statements xsi:type="AtomicCommand"/>
+  <statements xsi:type="AtomicCommand"/>
+  <statements xsi:type="TraceCommand" string="Just did two steps"/>
+  <statements xsi:type="WhileStatement">
+    <whileExpression xsi:type="NegatedExpression">
+      <negatedExpression xsi:type="WallAheadExpression"/>
+    </whileExpression>
+    <statements xsi:type="AtomicCommand"/>
+    <statements xsi:type="IfStatement">
+      <ifExpression xsi:type="NormalExpression" literal="mark"/>
+      <statements xsi:type="TraceCommand" string="mark found"/>
+      <statements xsi:type="AtomicCommand" literal="pick"/>
+      <statements2 xsi:type="AtomicCommand" literal="drop"/>
+    </statements>
+  </statements>
+</Script>

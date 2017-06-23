@@ -47,7 +47,7 @@ public class TraceCommandItemProvider extends CommandItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTraceLiteralPropertyDescriptor(object);
-			addStringPropertyDescriptor(object);
+			addCommandPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -75,23 +75,23 @@ public class TraceCommandItemProvider extends CommandItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the String feature.
+	 * This adds a property descriptor for the Command feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addStringPropertyDescriptor(Object object) {
+	protected void addCommandPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_TraceCommand_string_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TraceCommand_string_feature", "_UI_TraceCommand_type"),
-				 RobotmodelPackage.Literals.TRACE_COMMAND__STRING,
+				 getString("_UI_TraceCommand_command_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TraceCommand_command_feature", "_UI_TraceCommand_type"),
+				 RobotmodelPackage.Literals.TRACE_COMMAND__COMMAND,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -136,6 +136,7 @@ public class TraceCommandItemProvider extends CommandItemProvider {
 
 		switch (notification.getFeatureID(TraceCommand.class)) {
 			case RobotmodelPackage.TRACE_COMMAND__TRACE_LITERAL:
+			case RobotmodelPackage.TRACE_COMMAND__COMMAND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

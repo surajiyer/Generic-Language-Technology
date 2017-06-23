@@ -20,31 +20,31 @@ import robotmodel.RobotmodelPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link robotmodel.impl.AtomicCommandImpl#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link robotmodel.impl.AtomicCommandImpl#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AtomicCommandImpl extends CommandImpl implements AtomicCommand {
 	/**
-	 * The default value of the '{@link #getLiteral() <em>Literal</em>}' attribute.
+	 * The default value of the '{@link #getCommand() <em>Command</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLiteral()
+	 * @see #getCommand()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final CommandLiteral LITERAL_EDEFAULT = CommandLiteral.STEP;
+	protected static final CommandLiteral COMMAND_EDEFAULT = CommandLiteral.STEP;
 
 	/**
-	 * The cached value of the '{@link #getLiteral() <em>Literal</em>}' attribute.
+	 * The cached value of the '{@link #getCommand() <em>Command</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLiteral()
+	 * @see #getCommand()
 	 * @generated
 	 * @ordered
 	 */
-	protected CommandLiteral literal = LITERAL_EDEFAULT;
+	protected CommandLiteral command = COMMAND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -70,8 +70,8 @@ public class AtomicCommandImpl extends CommandImpl implements AtomicCommand {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CommandLiteral getLiteral() {
-		return literal;
+	public CommandLiteral getCommand() {
+		return command;
 	}
 
 	/**
@@ -79,11 +79,11 @@ public class AtomicCommandImpl extends CommandImpl implements AtomicCommand {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLiteral(CommandLiteral newLiteral) {
-		CommandLiteral oldLiteral = literal;
-		literal = newLiteral == null ? LITERAL_EDEFAULT : newLiteral;
+	public void setCommand(CommandLiteral newCommand) {
+		CommandLiteral oldCommand = command;
+		command = newCommand == null ? COMMAND_EDEFAULT : newCommand;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.ATOMIC_COMMAND__LITERAL, oldLiteral, literal));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.ATOMIC_COMMAND__COMMAND, oldCommand, command));
 	}
 
 	/**
@@ -94,8 +94,8 @@ public class AtomicCommandImpl extends CommandImpl implements AtomicCommand {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RobotmodelPackage.ATOMIC_COMMAND__LITERAL:
-				return getLiteral();
+			case RobotmodelPackage.ATOMIC_COMMAND__COMMAND:
+				return getCommand();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,8 +108,8 @@ public class AtomicCommandImpl extends CommandImpl implements AtomicCommand {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RobotmodelPackage.ATOMIC_COMMAND__LITERAL:
-				setLiteral((CommandLiteral)newValue);
+			case RobotmodelPackage.ATOMIC_COMMAND__COMMAND:
+				setCommand((CommandLiteral)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,8 +123,8 @@ public class AtomicCommandImpl extends CommandImpl implements AtomicCommand {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.ATOMIC_COMMAND__LITERAL:
-				setLiteral(LITERAL_EDEFAULT);
+			case RobotmodelPackage.ATOMIC_COMMAND__COMMAND:
+				setCommand(COMMAND_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,8 +138,8 @@ public class AtomicCommandImpl extends CommandImpl implements AtomicCommand {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.ATOMIC_COMMAND__LITERAL:
-				return literal != LITERAL_EDEFAULT;
+			case RobotmodelPackage.ATOMIC_COMMAND__COMMAND:
+				return command != COMMAND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -154,8 +154,8 @@ public class AtomicCommandImpl extends CommandImpl implements AtomicCommand {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (literal: ");
-		result.append(literal);
+		result.append(" (command: ");
+		result.append(command);
 		result.append(')');
 		return result.toString();
 	}

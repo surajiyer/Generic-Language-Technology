@@ -30,32 +30,32 @@ import robotmodel.WhileStatement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link robotmodel.impl.WhileStatementImpl#getWhileExpression <em>While Expression</em>}</li>
- *   <li>{@link robotmodel.impl.WhileStatementImpl#getStatements <em>Statements</em>}</li>
+ *   <li>{@link robotmodel.impl.WhileStatementImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link robotmodel.impl.WhileStatementImpl#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class WhileStatementImpl extends StatementImpl implements WhileStatement {
 	/**
-	 * The cached value of the '{@link #getWhileExpression() <em>While Expression</em>}' containment reference.
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getWhileExpression()
+	 * @see #getCondition()
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression whileExpression;
+	protected Expression condition;
 
 	/**
-	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+	 * The cached value of the '{@link #getCommand() <em>Command</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatements()
+	 * @see #getCommand()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Statement> statements;
+	protected EList<Statement> command;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,8 +81,8 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getWhileExpression() {
-		return whileExpression;
+	public Expression getCondition() {
+		return condition;
 	}
 
 	/**
@@ -90,11 +90,11 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetWhileExpression(Expression newWhileExpression, NotificationChain msgs) {
-		Expression oldWhileExpression = whileExpression;
-		whileExpression = newWhileExpression;
+	public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs) {
+		Expression oldCondition = condition;
+		condition = newCondition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotmodelPackage.WHILE_STATEMENT__WHILE_EXPRESSION, oldWhileExpression, newWhileExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotmodelPackage.WHILE_STATEMENT__CONDITION, oldCondition, newCondition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -105,18 +105,18 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setWhileExpression(Expression newWhileExpression) {
-		if (newWhileExpression != whileExpression) {
+	public void setCondition(Expression newCondition) {
+		if (newCondition != condition) {
 			NotificationChain msgs = null;
-			if (whileExpression != null)
-				msgs = ((InternalEObject)whileExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.WHILE_STATEMENT__WHILE_EXPRESSION, null, msgs);
-			if (newWhileExpression != null)
-				msgs = ((InternalEObject)newWhileExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.WHILE_STATEMENT__WHILE_EXPRESSION, null, msgs);
-			msgs = basicSetWhileExpression(newWhileExpression, msgs);
+			if (condition != null)
+				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.WHILE_STATEMENT__CONDITION, null, msgs);
+			if (newCondition != null)
+				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.WHILE_STATEMENT__CONDITION, null, msgs);
+			msgs = basicSetCondition(newCondition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.WHILE_STATEMENT__WHILE_EXPRESSION, newWhileExpression, newWhileExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.WHILE_STATEMENT__CONDITION, newCondition, newCondition));
 	}
 
 	/**
@@ -124,11 +124,11 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Statement> getStatements() {
-		if (statements == null) {
-			statements = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.WHILE_STATEMENT__STATEMENTS);
+	public EList<Statement> getCommand() {
+		if (command == null) {
+			command = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.WHILE_STATEMENT__COMMAND);
 		}
-		return statements;
+		return command;
 	}
 
 	/**
@@ -139,10 +139,10 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RobotmodelPackage.WHILE_STATEMENT__WHILE_EXPRESSION:
-				return basicSetWhileExpression(null, msgs);
-			case RobotmodelPackage.WHILE_STATEMENT__STATEMENTS:
-				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
+			case RobotmodelPackage.WHILE_STATEMENT__CONDITION:
+				return basicSetCondition(null, msgs);
+			case RobotmodelPackage.WHILE_STATEMENT__COMMAND:
+				return ((InternalEList<?>)getCommand()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -155,10 +155,10 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RobotmodelPackage.WHILE_STATEMENT__WHILE_EXPRESSION:
-				return getWhileExpression();
-			case RobotmodelPackage.WHILE_STATEMENT__STATEMENTS:
-				return getStatements();
+			case RobotmodelPackage.WHILE_STATEMENT__CONDITION:
+				return getCondition();
+			case RobotmodelPackage.WHILE_STATEMENT__COMMAND:
+				return getCommand();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -172,12 +172,12 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RobotmodelPackage.WHILE_STATEMENT__WHILE_EXPRESSION:
-				setWhileExpression((Expression)newValue);
+			case RobotmodelPackage.WHILE_STATEMENT__CONDITION:
+				setCondition((Expression)newValue);
 				return;
-			case RobotmodelPackage.WHILE_STATEMENT__STATEMENTS:
-				getStatements().clear();
-				getStatements().addAll((Collection<? extends Statement>)newValue);
+			case RobotmodelPackage.WHILE_STATEMENT__COMMAND:
+				getCommand().clear();
+				getCommand().addAll((Collection<? extends Statement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,11 +191,11 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.WHILE_STATEMENT__WHILE_EXPRESSION:
-				setWhileExpression((Expression)null);
+			case RobotmodelPackage.WHILE_STATEMENT__CONDITION:
+				setCondition((Expression)null);
 				return;
-			case RobotmodelPackage.WHILE_STATEMENT__STATEMENTS:
-				getStatements().clear();
+			case RobotmodelPackage.WHILE_STATEMENT__COMMAND:
+				getCommand().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -209,10 +209,10 @@ public class WhileStatementImpl extends StatementImpl implements WhileStatement 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.WHILE_STATEMENT__WHILE_EXPRESSION:
-				return whileExpression != null;
-			case RobotmodelPackage.WHILE_STATEMENT__STATEMENTS:
-				return statements != null && !statements.isEmpty();
+			case RobotmodelPackage.WHILE_STATEMENT__CONDITION:
+				return condition != null;
+			case RobotmodelPackage.WHILE_STATEMENT__COMMAND:
+				return command != null && !command.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

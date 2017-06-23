@@ -30,43 +30,43 @@ import robotmodel.Statement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link robotmodel.impl.IfStatementImpl#getIfExpression <em>If Expression</em>}</li>
- *   <li>{@link robotmodel.impl.IfStatementImpl#getStatements <em>Statements</em>}</li>
- *   <li>{@link robotmodel.impl.IfStatementImpl#getStatements2 <em>Statements2</em>}</li>
+ *   <li>{@link robotmodel.impl.IfStatementImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link robotmodel.impl.IfStatementImpl#getCommand <em>Command</em>}</li>
+ *   <li>{@link robotmodel.impl.IfStatementImpl#getCommand2 <em>Command2</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class IfStatementImpl extends StatementImpl implements IfStatement {
 	/**
-	 * The cached value of the '{@link #getIfExpression() <em>If Expression</em>}' containment reference.
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIfExpression()
+	 * @see #getCondition()
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression ifExpression;
+	protected Expression condition;
 
 	/**
-	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
+	 * The cached value of the '{@link #getCommand() <em>Command</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatements()
+	 * @see #getCommand()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Statement> statements;
+	protected EList<Statement> command;
 
 	/**
-	 * The cached value of the '{@link #getStatements2() <em>Statements2</em>}' containment reference list.
+	 * The cached value of the '{@link #getCommand2() <em>Command2</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStatements2()
+	 * @see #getCommand2()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Statement> statements2;
+	protected EList<Statement> command2;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,8 +92,8 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getIfExpression() {
-		return ifExpression;
+	public Expression getCondition() {
+		return condition;
 	}
 
 	/**
@@ -101,11 +101,11 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetIfExpression(Expression newIfExpression, NotificationChain msgs) {
-		Expression oldIfExpression = ifExpression;
-		ifExpression = newIfExpression;
+	public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs) {
+		Expression oldCondition = condition;
+		condition = newCondition;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotmodelPackage.IF_STATEMENT__IF_EXPRESSION, oldIfExpression, newIfExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotmodelPackage.IF_STATEMENT__CONDITION, oldCondition, newCondition);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -116,18 +116,18 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIfExpression(Expression newIfExpression) {
-		if (newIfExpression != ifExpression) {
+	public void setCondition(Expression newCondition) {
+		if (newCondition != condition) {
 			NotificationChain msgs = null;
-			if (ifExpression != null)
-				msgs = ((InternalEObject)ifExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.IF_STATEMENT__IF_EXPRESSION, null, msgs);
-			if (newIfExpression != null)
-				msgs = ((InternalEObject)newIfExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.IF_STATEMENT__IF_EXPRESSION, null, msgs);
-			msgs = basicSetIfExpression(newIfExpression, msgs);
+			if (condition != null)
+				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.IF_STATEMENT__CONDITION, null, msgs);
+			if (newCondition != null)
+				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.IF_STATEMENT__CONDITION, null, msgs);
+			msgs = basicSetCondition(newCondition, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.IF_STATEMENT__IF_EXPRESSION, newIfExpression, newIfExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.IF_STATEMENT__CONDITION, newCondition, newCondition));
 	}
 
 	/**
@@ -135,11 +135,11 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Statement> getStatements() {
-		if (statements == null) {
-			statements = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.IF_STATEMENT__STATEMENTS);
+	public EList<Statement> getCommand() {
+		if (command == null) {
+			command = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.IF_STATEMENT__COMMAND);
 		}
-		return statements;
+		return command;
 	}
 
 	/**
@@ -147,11 +147,11 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Statement> getStatements2() {
-		if (statements2 == null) {
-			statements2 = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.IF_STATEMENT__STATEMENTS2);
+	public EList<Statement> getCommand2() {
+		if (command2 == null) {
+			command2 = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.IF_STATEMENT__COMMAND2);
 		}
-		return statements2;
+		return command2;
 	}
 
 	/**
@@ -162,12 +162,12 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RobotmodelPackage.IF_STATEMENT__IF_EXPRESSION:
-				return basicSetIfExpression(null, msgs);
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS:
-				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS2:
-				return ((InternalEList<?>)getStatements2()).basicRemove(otherEnd, msgs);
+			case RobotmodelPackage.IF_STATEMENT__CONDITION:
+				return basicSetCondition(null, msgs);
+			case RobotmodelPackage.IF_STATEMENT__COMMAND:
+				return ((InternalEList<?>)getCommand()).basicRemove(otherEnd, msgs);
+			case RobotmodelPackage.IF_STATEMENT__COMMAND2:
+				return ((InternalEList<?>)getCommand2()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -180,12 +180,12 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RobotmodelPackage.IF_STATEMENT__IF_EXPRESSION:
-				return getIfExpression();
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS:
-				return getStatements();
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS2:
-				return getStatements2();
+			case RobotmodelPackage.IF_STATEMENT__CONDITION:
+				return getCondition();
+			case RobotmodelPackage.IF_STATEMENT__COMMAND:
+				return getCommand();
+			case RobotmodelPackage.IF_STATEMENT__COMMAND2:
+				return getCommand2();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,16 +199,16 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RobotmodelPackage.IF_STATEMENT__IF_EXPRESSION:
-				setIfExpression((Expression)newValue);
+			case RobotmodelPackage.IF_STATEMENT__CONDITION:
+				setCondition((Expression)newValue);
 				return;
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS:
-				getStatements().clear();
-				getStatements().addAll((Collection<? extends Statement>)newValue);
+			case RobotmodelPackage.IF_STATEMENT__COMMAND:
+				getCommand().clear();
+				getCommand().addAll((Collection<? extends Statement>)newValue);
 				return;
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS2:
-				getStatements2().clear();
-				getStatements2().addAll((Collection<? extends Statement>)newValue);
+			case RobotmodelPackage.IF_STATEMENT__COMMAND2:
+				getCommand2().clear();
+				getCommand2().addAll((Collection<? extends Statement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,14 +222,14 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.IF_STATEMENT__IF_EXPRESSION:
-				setIfExpression((Expression)null);
+			case RobotmodelPackage.IF_STATEMENT__CONDITION:
+				setCondition((Expression)null);
 				return;
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS:
-				getStatements().clear();
+			case RobotmodelPackage.IF_STATEMENT__COMMAND:
+				getCommand().clear();
 				return;
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS2:
-				getStatements2().clear();
+			case RobotmodelPackage.IF_STATEMENT__COMMAND2:
+				getCommand2().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,12 +243,12 @@ public class IfStatementImpl extends StatementImpl implements IfStatement {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.IF_STATEMENT__IF_EXPRESSION:
-				return ifExpression != null;
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS:
-				return statements != null && !statements.isEmpty();
-			case RobotmodelPackage.IF_STATEMENT__STATEMENTS2:
-				return statements2 != null && !statements2.isEmpty();
+			case RobotmodelPackage.IF_STATEMENT__CONDITION:
+				return condition != null;
+			case RobotmodelPackage.IF_STATEMENT__COMMAND:
+				return command != null && !command.isEmpty();
+			case RobotmodelPackage.IF_STATEMENT__COMMAND2:
+				return command2 != null && !command2.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

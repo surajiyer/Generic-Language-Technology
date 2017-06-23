@@ -1,0 +1,3 @@
+rule Robot2Java 
+	transform script : {
+}

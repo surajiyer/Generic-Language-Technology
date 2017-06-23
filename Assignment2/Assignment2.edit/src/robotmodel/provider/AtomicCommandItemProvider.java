@@ -46,25 +46,25 @@ public class AtomicCommandItemProvider extends CommandItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addLiteralPropertyDescriptor(object);
+			addCommandPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Literal feature.
+	 * This adds a property descriptor for the Command feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addLiteralPropertyDescriptor(Object object) {
+	protected void addCommandPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_AtomicCommand_literal_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_AtomicCommand_literal_feature", "_UI_AtomicCommand_type"),
-				 RobotmodelPackage.Literals.ATOMIC_COMMAND__LITERAL,
+				 getString("_UI_AtomicCommand_command_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AtomicCommand_command_feature", "_UI_AtomicCommand_type"),
+				 RobotmodelPackage.Literals.ATOMIC_COMMAND__COMMAND,
 				 true,
 				 false,
 				 false,
@@ -92,7 +92,7 @@ public class AtomicCommandItemProvider extends CommandItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		CommandLiteral labelValue = ((AtomicCommand)object).getLiteral();
+		CommandLiteral labelValue = ((AtomicCommand)object).getCommand();
 		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_AtomicCommand_type") :
@@ -112,7 +112,7 @@ public class AtomicCommandItemProvider extends CommandItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AtomicCommand.class)) {
-			case RobotmodelPackage.ATOMIC_COMMAND__LITERAL:
+			case RobotmodelPackage.ATOMIC_COMMAND__COMMAND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

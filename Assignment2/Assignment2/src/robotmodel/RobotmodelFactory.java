@@ -112,24 +112,6 @@ public interface RobotmodelFactory extends EFactory {
 	Layout createLayout();
 
 	/**
-	 * Returns a new object of class '<em>Integer</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Integer</em>'.
-	 * @generated
-	 */
-	Integer createInteger();
-
-	/**
-	 * Returns a new object of class '<em>String Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String Expression</em>'.
-	 * @generated
-	 */
-	StringExpression createStringExpression();
-
-	/**
 	 * Returns a new object of class '<em>Heading Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

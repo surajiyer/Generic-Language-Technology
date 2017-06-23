@@ -12,7 +12,7 @@ package robotmodel;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link robotmodel.AtomicCommand#getLiteral <em>Literal</em>}</li>
+ *   <li>{@link robotmodel.AtomicCommand#getCommand <em>Command</em>}</li>
  * </ul>
  *
  * @see robotmodel.RobotmodelPackage#getAtomicCommand()
@@ -21,32 +21,32 @@ package robotmodel;
  */
 public interface AtomicCommand extends Command {
 	/**
-	 * Returns the value of the '<em><b>Literal</b></em>' attribute.
+	 * Returns the value of the '<em><b>Command</b></em>' attribute.
 	 * The literals are from the enumeration {@link robotmodel.CommandLiteral}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Literal</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Command</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Literal</em>' attribute.
+	 * @return the value of the '<em>Command</em>' attribute.
 	 * @see robotmodel.CommandLiteral
-	 * @see #setLiteral(CommandLiteral)
-	 * @see robotmodel.RobotmodelPackage#getAtomicCommand_Literal()
+	 * @see #setCommand(CommandLiteral)
+	 * @see robotmodel.RobotmodelPackage#getAtomicCommand_Command()
 	 * @model required="true"
 	 * @generated
 	 */
-	CommandLiteral getLiteral();
+	CommandLiteral getCommand();
 
 	/**
-	 * Sets the value of the '{@link robotmodel.AtomicCommand#getLiteral <em>Literal</em>}' attribute.
+	 * Sets the value of the '{@link robotmodel.AtomicCommand#getCommand <em>Command</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Literal</em>' attribute.
+	 * @param value the new value of the '<em>Command</em>' attribute.
 	 * @see robotmodel.CommandLiteral
-	 * @see #getLiteral()
+	 * @see #getCommand()
 	 * @generated
 	 */
-	void setLiteral(CommandLiteral value);
+	void setCommand(CommandLiteral value);
 
 } // AtomicCommand

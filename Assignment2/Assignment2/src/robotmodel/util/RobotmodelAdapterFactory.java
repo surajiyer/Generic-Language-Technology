@@ -9,27 +9,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import robotmodel.AtomicCommand;
-import robotmodel.AtomicExpression;
-import robotmodel.BinaryExpression;
-import robotmodel.Command;
-import robotmodel.Comment;
-import robotmodel.ConstructionStatement;
-import robotmodel.Expression;
-import robotmodel.HeadingExpression;
-import robotmodel.IfStatement;
-import robotmodel.Layout;
-import robotmodel.Name;
-import robotmodel.NegatedExpression;
-import robotmodel.NormalExpression;
-import robotmodel.RepeatStatement;
-import robotmodel.RobotmodelPackage;
-import robotmodel.Script;
-import robotmodel.Statement;
-import robotmodel.StringExpression;
-import robotmodel.TraceCommand;
-import robotmodel.WallAheadExpression;
-import robotmodel.WhileStatement;
+import robotmodel.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -142,14 +122,6 @@ public class RobotmodelAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseLayout(Layout object) {
 				return createLayoutAdapter();
-			}
-			@Override
-			public Adapter caseInteger(robotmodel.Integer object) {
-				return createIntegerAdapter();
-			}
-			@Override
-			public Adapter caseStringExpression(StringExpression object) {
-				return createStringExpressionAdapter();
 			}
 			@Override
 			public Adapter caseHeadingExpression(HeadingExpression object) {
@@ -384,34 +356,6 @@ public class RobotmodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLayoutAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link robotmodel.Integer <em>Integer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see robotmodel.Integer
-	 * @generated
-	 */
-	public Adapter createIntegerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link robotmodel.StringExpression <em>String Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see robotmodel.StringExpression
-	 * @generated
-	 */
-	public Adapter createStringExpressionAdapter() {
 		return null;
 	}
 
