@@ -139,15 +139,6 @@ public interface RobotmodelFactory extends EFactory {
 	NormalExpression createNormalExpression();
 
 	/**
-	 * Returns a new object of class '<em>Name</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Name</em>'.
-	 * @generated
-	 */
-	Name createName();
-
-	/**
 	 * Returns a new object of class '<em>Construction Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

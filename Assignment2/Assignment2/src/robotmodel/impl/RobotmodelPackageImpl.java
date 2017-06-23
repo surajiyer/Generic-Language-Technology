@@ -26,7 +26,6 @@ import robotmodel.HeadingLiteral;
 import robotmodel.IfStatement;
 import robotmodel.Keyword;
 import robotmodel.Layout;
-import robotmodel.Name;
 import robotmodel.NegatedExpression;
 import robotmodel.NormalExpression;
 import robotmodel.NormalExpressionLiteral;
@@ -167,13 +166,6 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * @generated
 	 */
 	private EClass normalExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass nameEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -327,7 +319,7 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScript_Name() {
+	public EReference getScript_Command() {
 		return (EReference)scriptEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -336,8 +328,8 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScript_Command() {
-		return (EReference)scriptEClass.getEStructuralFeatures().get(1);
+	public EAttribute getScript_Name() {
+		return (EAttribute)scriptEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -669,15 +661,6 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getName_() {
-		return nameEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getConstructionStatement() {
 		return constructionStatementEClass;
 	}
@@ -828,8 +811,8 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 
 		// Create classes and their features
 		scriptEClass = createEClass(SCRIPT);
-		createEReference(scriptEClass, SCRIPT__NAME);
 		createEReference(scriptEClass, SCRIPT__COMMAND);
+		createEAttribute(scriptEClass, SCRIPT__NAME);
 
 		statementEClass = createEClass(STATEMENT);
 
@@ -882,8 +865,6 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 
 		normalExpressionEClass = createEClass(NORMAL_EXPRESSION);
 		createEAttribute(normalExpressionEClass, NORMAL_EXPRESSION__LITERAL);
-
-		nameEClass = createEClass(NAME);
 
 		constructionStatementEClass = createEClass(CONSTRUCTION_STATEMENT);
 		createEAttribute(constructionStatementEClass, CONSTRUCTION_STATEMENT__COMMAND);
@@ -948,8 +929,8 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScript_Name(), this.getName_(), null, "name", null, 1, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScript_Command(), this.getStatement(), null, "command", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 1, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1002,8 +983,6 @@ public class RobotmodelPackageImpl extends EPackageImpl implements RobotmodelPac
 
 		initEClass(normalExpressionEClass, NormalExpression.class, "NormalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNormalExpression_Literal(), this.getNormalExpressionLiteral(), "literal", null, 1, 1, NormalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(nameEClass, Name.class, "Name", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(constructionStatementEClass, ConstructionStatement.class, "ConstructionStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConstructionStatement_Command(), this.getGridLiteral(), "command", null, 0, 1, ConstructionStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

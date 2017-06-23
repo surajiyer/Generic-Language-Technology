@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import robotmodel.Name;
 import robotmodel.RobotmodelPackage;
 import robotmodel.Script;
 import robotmodel.Statement;
@@ -31,23 +30,13 @@ import robotmodel.Statement;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link robotmodel.impl.ScriptImpl#getName <em>Name</em>}</li>
  *   <li>{@link robotmodel.impl.ScriptImpl#getCommand <em>Command</em>}</li>
+ *   <li>{@link robotmodel.impl.ScriptImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected Name name;
-
 	/**
 	 * The cached value of the '{@link #getCommand() <em>Command</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -57,6 +46,26 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * @ordered
 	 */
 	protected EList<Statement> command;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,49 +91,6 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Name getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetName(Name newName, NotificationChain msgs) {
-		Name oldName = name;
-		name = newName;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RobotmodelPackage.SCRIPT__NAME, oldName, newName);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(Name newName) {
-		if (newName != name) {
-			NotificationChain msgs = null;
-			if (name != null)
-				msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.SCRIPT__NAME, null, msgs);
-			if (newName != null)
-				msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RobotmodelPackage.SCRIPT__NAME, null, msgs);
-			msgs = basicSetName(newName, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.SCRIPT__NAME, newName, newName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Statement> getCommand() {
 		if (command == null) {
 			command = new EObjectContainmentEList<Statement>(Statement.class, this, RobotmodelPackage.SCRIPT__COMMAND);
@@ -137,11 +103,30 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RobotmodelPackage.SCRIPT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RobotmodelPackage.SCRIPT__NAME:
-				return basicSetName(null, msgs);
 			case RobotmodelPackage.SCRIPT__COMMAND:
 				return ((InternalEList<?>)getCommand()).basicRemove(otherEnd, msgs);
 		}
@@ -156,10 +141,10 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RobotmodelPackage.SCRIPT__NAME:
-				return getName();
 			case RobotmodelPackage.SCRIPT__COMMAND:
 				return getCommand();
+			case RobotmodelPackage.SCRIPT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -173,12 +158,12 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RobotmodelPackage.SCRIPT__NAME:
-				setName((Name)newValue);
-				return;
 			case RobotmodelPackage.SCRIPT__COMMAND:
 				getCommand().clear();
 				getCommand().addAll((Collection<? extends Statement>)newValue);
+				return;
+			case RobotmodelPackage.SCRIPT__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,11 +177,11 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.SCRIPT__NAME:
-				setName((Name)null);
-				return;
 			case RobotmodelPackage.SCRIPT__COMMAND:
 				getCommand().clear();
+				return;
+			case RobotmodelPackage.SCRIPT__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -210,12 +195,28 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RobotmodelPackage.SCRIPT__NAME:
-				return name != null;
 			case RobotmodelPackage.SCRIPT__COMMAND:
 				return command != null && !command.isEmpty();
+			case RobotmodelPackage.SCRIPT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ScriptImpl

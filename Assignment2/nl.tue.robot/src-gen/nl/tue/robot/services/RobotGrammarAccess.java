@@ -29,47 +29,52 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	public class ScriptElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.Script");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cScriptKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cRunsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cAsKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cCommandAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cCommandStatementParserRuleCall_4_0 = (RuleCall)cCommandAssignment_4.eContents().get(0);
-		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Action cScriptAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cScriptKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cRunsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cAsKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cCommandAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cCommandStatementParserRuleCall_5_0 = (RuleCall)cCommandAssignment_5.eContents().get(0);
+		private final Keyword cEndKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Script:
-		//	'Script' name=Name 'runs' 'as'
+		//	{Script}
+		//	'Script' name=ID 'runs' 'as'
 		//	command+=Statement*
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Script' name=Name 'runs' 'as' command+=Statement* 'end'
+		//{Script} 'Script' name=ID 'runs' 'as' command+=Statement* 'end'
 		public Group getGroup() { return cGroup; }
 		
+		//{Script}
+		public Action getScriptAction_0() { return cScriptAction_0; }
+		
 		//'Script'
-		public Keyword getScriptKeyword_0() { return cScriptKeyword_0; }
+		public Keyword getScriptKeyword_1() { return cScriptKeyword_1; }
 		
-		//name=Name
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
-		//Name
-		public RuleCall getNameNameParserRuleCall_1_0() { return cNameNameParserRuleCall_1_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 		
 		//'runs'
-		public Keyword getRunsKeyword_2() { return cRunsKeyword_2; }
+		public Keyword getRunsKeyword_3() { return cRunsKeyword_3; }
 		
 		//'as'
-		public Keyword getAsKeyword_3() { return cAsKeyword_3; }
+		public Keyword getAsKeyword_4() { return cAsKeyword_4; }
 		
 		//command+=Statement*
-		public Assignment getCommandAssignment_4() { return cCommandAssignment_4; }
+		public Assignment getCommandAssignment_5() { return cCommandAssignment_5; }
 		
 		//Statement
-		public RuleCall getCommandStatementParserRuleCall_4_0() { return cCommandStatementParserRuleCall_4_0; }
+		public RuleCall getCommandStatementParserRuleCall_5_0() { return cCommandStatementParserRuleCall_5_0; }
 		
 		//'end'
-		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
+		public Keyword getEndKeyword_6() { return cEndKeyword_6; }
 	}
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.Statement");
@@ -112,14 +117,34 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.Expression");
-		private final Action cExpressionAction = (Action)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cNegatedExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cBinaryExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cHeadingExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cWallAheadExpressionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cNormalExpressionParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//Expression:
-		//	{Expression};
+		//	NegatedExpression | BinaryExpression | HeadingExpression | WallAheadExpression | NormalExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Expression}
-		public Action getExpressionAction() { return cExpressionAction; }
+		//NegatedExpression | BinaryExpression | HeadingExpression | WallAheadExpression | NormalExpression
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//NegatedExpression
+		public RuleCall getNegatedExpressionParserRuleCall_0() { return cNegatedExpressionParserRuleCall_0; }
+		
+		//BinaryExpression
+		public RuleCall getBinaryExpressionParserRuleCall_1() { return cBinaryExpressionParserRuleCall_1; }
+		
+		//HeadingExpression
+		public RuleCall getHeadingExpressionParserRuleCall_2() { return cHeadingExpressionParserRuleCall_2; }
+		
+		//WallAheadExpression
+		public RuleCall getWallAheadExpressionParserRuleCall_3() { return cWallAheadExpressionParserRuleCall_3; }
+		
+		//NormalExpression
+		public RuleCall getNormalExpressionParserRuleCall_4() { return cNormalExpressionParserRuleCall_4; }
 	}
 	public class NegatedExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.NegatedExpression");
@@ -282,25 +307,6 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 		//NormalExpressionLiteral
 		public RuleCall getLiteralNormalExpressionLiteralEnumRuleCall_1_0() { return cLiteralNormalExpressionLiteralEnumRuleCall_1_0; }
 	}
-	public class NameElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.Name");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cNameAction_0 = (Action)cGroup.eContents().get(0);
-		private final RuleCall cIDTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		
-		//Name:
-		//	{Name} ID;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{Name} ID
-		public Group getGroup() { return cGroup; }
-		
-		//{Name}
-		public Action getNameAction_0() { return cNameAction_0; }
-		
-		//ID
-		public RuleCall getIDTerminalRuleCall_1() { return cIDTerminalRuleCall_1; }
-	}
 	public class CommentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.Comment");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -327,234 +333,265 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	public class IfStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.IfStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cIfKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cConditionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cConditionExpressionParserRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
-		private final Keyword cDoKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cCommandAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCommandStatementParserRuleCall_3_0 = (RuleCall)cCommandAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cElseKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Keyword cDoKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Assignment cCommand2Assignment_4_2 = (Assignment)cGroup_4.eContents().get(2);
-		private final RuleCall cCommand2StatementParserRuleCall_4_2_0 = (RuleCall)cCommand2Assignment_4_2.eContents().get(0);
-		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Action cIfStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cIfKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cConditionExpressionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
+		private final Keyword cDoKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cCommandAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCommandStatementParserRuleCall_4_0 = (RuleCall)cCommandAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cElseKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cDoKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Assignment cCommand2Assignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cCommand2StatementParserRuleCall_5_2_0 = (RuleCall)cCommand2Assignment_5_2.eContents().get(0);
+		private final Keyword cEndKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//IfStatement:
+		//	{IfStatement}
 		//	'if' condition=Expression 'do'
 		//	command+=Statement* ('else' 'do' command2+=Statement*)?
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'if' condition=Expression 'do' command+=Statement* ('else' 'do' command2+=Statement*)? 'end'
+		//{IfStatement} 'if' condition=Expression 'do' command+=Statement* ('else' 'do' command2+=Statement*)? 'end'
 		public Group getGroup() { return cGroup; }
 		
+		//{IfStatement}
+		public Action getIfStatementAction_0() { return cIfStatementAction_0; }
+		
 		//'if'
-		public Keyword getIfKeyword_0() { return cIfKeyword_0; }
+		public Keyword getIfKeyword_1() { return cIfKeyword_1; }
 		
 		//condition=Expression
-		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
+		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
 		
 		//Expression
-		public RuleCall getConditionExpressionParserRuleCall_1_0() { return cConditionExpressionParserRuleCall_1_0; }
+		public RuleCall getConditionExpressionParserRuleCall_2_0() { return cConditionExpressionParserRuleCall_2_0; }
 		
 		//'do'
-		public Keyword getDoKeyword_2() { return cDoKeyword_2; }
+		public Keyword getDoKeyword_3() { return cDoKeyword_3; }
 		
 		//command+=Statement*
-		public Assignment getCommandAssignment_3() { return cCommandAssignment_3; }
+		public Assignment getCommandAssignment_4() { return cCommandAssignment_4; }
 		
 		//Statement
-		public RuleCall getCommandStatementParserRuleCall_3_0() { return cCommandStatementParserRuleCall_3_0; }
+		public RuleCall getCommandStatementParserRuleCall_4_0() { return cCommandStatementParserRuleCall_4_0; }
 		
 		//('else' 'do' command2+=Statement*)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_5() { return cGroup_5; }
 		
 		//'else'
-		public Keyword getElseKeyword_4_0() { return cElseKeyword_4_0; }
+		public Keyword getElseKeyword_5_0() { return cElseKeyword_5_0; }
 		
 		//'do'
-		public Keyword getDoKeyword_4_1() { return cDoKeyword_4_1; }
+		public Keyword getDoKeyword_5_1() { return cDoKeyword_5_1; }
 		
 		//command2+=Statement*
-		public Assignment getCommand2Assignment_4_2() { return cCommand2Assignment_4_2; }
+		public Assignment getCommand2Assignment_5_2() { return cCommand2Assignment_5_2; }
 		
 		//Statement
-		public RuleCall getCommand2StatementParserRuleCall_4_2_0() { return cCommand2StatementParserRuleCall_4_2_0; }
+		public RuleCall getCommand2StatementParserRuleCall_5_2_0() { return cCommand2StatementParserRuleCall_5_2_0; }
 		
 		//'end'
-		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
+		public Keyword getEndKeyword_6() { return cEndKeyword_6; }
 	}
 	public class WhileStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.WhileStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cWhileKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cConditionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cConditionExpressionParserRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
-		private final Keyword cDoKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cCommandAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCommandStatementParserRuleCall_3_0 = (RuleCall)cCommandAssignment_3.eContents().get(0);
-		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Action cWhileStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cWhileKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cConditionExpressionParserRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
+		private final Keyword cDoKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cCommandAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCommandStatementParserRuleCall_4_0 = (RuleCall)cCommandAssignment_4.eContents().get(0);
+		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//WhileStatement:
+		//	{WhileStatement}
 		//	'while' condition=Expression 'do'
 		//	command+=Statement*
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'while' condition=Expression 'do' command+=Statement* 'end'
+		//{WhileStatement} 'while' condition=Expression 'do' command+=Statement* 'end'
 		public Group getGroup() { return cGroup; }
 		
+		//{WhileStatement}
+		public Action getWhileStatementAction_0() { return cWhileStatementAction_0; }
+		
 		//'while'
-		public Keyword getWhileKeyword_0() { return cWhileKeyword_0; }
+		public Keyword getWhileKeyword_1() { return cWhileKeyword_1; }
 		
 		//condition=Expression
-		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
+		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
 		
 		//Expression
-		public RuleCall getConditionExpressionParserRuleCall_1_0() { return cConditionExpressionParserRuleCall_1_0; }
+		public RuleCall getConditionExpressionParserRuleCall_2_0() { return cConditionExpressionParserRuleCall_2_0; }
 		
 		//'do'
-		public Keyword getDoKeyword_2() { return cDoKeyword_2; }
+		public Keyword getDoKeyword_3() { return cDoKeyword_3; }
 		
 		//command+=Statement*
-		public Assignment getCommandAssignment_3() { return cCommandAssignment_3; }
+		public Assignment getCommandAssignment_4() { return cCommandAssignment_4; }
 		
 		//Statement
-		public RuleCall getCommandStatementParserRuleCall_3_0() { return cCommandStatementParserRuleCall_3_0; }
+		public RuleCall getCommandStatementParserRuleCall_4_0() { return cCommandStatementParserRuleCall_4_0; }
 		
 		//'end'
-		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
+		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
 	}
 	public class RepeatStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.RepeatStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRepeatKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cConditionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cConditionINTTerminalRuleCall_1_0 = (RuleCall)cConditionAssignment_1.eContents().get(0);
-		private final Keyword cTimesKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cCommandAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cCommandStatementParserRuleCall_3_0 = (RuleCall)cCommandAssignment_3.eContents().get(0);
-		private final Keyword cEndKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Action cRepeatStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cRepeatKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cConditionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cConditionINTTerminalRuleCall_2_0 = (RuleCall)cConditionAssignment_2.eContents().get(0);
+		private final Keyword cTimesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cCommandAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cCommandStatementParserRuleCall_4_0 = (RuleCall)cCommandAssignment_4.eContents().get(0);
+		private final Keyword cEndKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//RepeatStatement:
+		//	{RepeatStatement}
 		//	'repeat' condition=INT 'times'
 		//	command+=Statement*
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'repeat' condition=INT 'times' command+=Statement* 'end'
+		//{RepeatStatement} 'repeat' condition=INT 'times' command+=Statement* 'end'
 		public Group getGroup() { return cGroup; }
 		
+		//{RepeatStatement}
+		public Action getRepeatStatementAction_0() { return cRepeatStatementAction_0; }
+		
 		//'repeat'
-		public Keyword getRepeatKeyword_0() { return cRepeatKeyword_0; }
+		public Keyword getRepeatKeyword_1() { return cRepeatKeyword_1; }
 		
 		//condition=INT
-		public Assignment getConditionAssignment_1() { return cConditionAssignment_1; }
+		public Assignment getConditionAssignment_2() { return cConditionAssignment_2; }
 		
 		//INT
-		public RuleCall getConditionINTTerminalRuleCall_1_0() { return cConditionINTTerminalRuleCall_1_0; }
+		public RuleCall getConditionINTTerminalRuleCall_2_0() { return cConditionINTTerminalRuleCall_2_0; }
 		
 		//'times'
-		public Keyword getTimesKeyword_2() { return cTimesKeyword_2; }
+		public Keyword getTimesKeyword_3() { return cTimesKeyword_3; }
 		
 		//command+=Statement*
-		public Assignment getCommandAssignment_3() { return cCommandAssignment_3; }
+		public Assignment getCommandAssignment_4() { return cCommandAssignment_4; }
 		
 		//Statement
-		public RuleCall getCommandStatementParserRuleCall_3_0() { return cCommandStatementParserRuleCall_3_0; }
+		public RuleCall getCommandStatementParserRuleCall_4_0() { return cCommandStatementParserRuleCall_4_0; }
 		
 		//'end'
-		public Keyword getEndKeyword_4() { return cEndKeyword_4; }
+		public Keyword getEndKeyword_5() { return cEndKeyword_5; }
 	}
 	public class TraceCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.TraceCommand");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTraceKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCommandAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCommandSTRINGTerminalRuleCall_1_0 = (RuleCall)cCommandAssignment_1.eContents().get(0);
+		private final Action cTraceCommandAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cTraceKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cCommandAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cCommandSTRINGTerminalRuleCall_2_0 = (RuleCall)cCommandAssignment_2.eContents().get(0);
 		
 		//TraceCommand:
-		//	'trace' command=STRING;
+		//	{TraceCommand} 'trace' command=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'trace' command=STRING
+		//{TraceCommand} 'trace' command=STRING
 		public Group getGroup() { return cGroup; }
 		
+		//{TraceCommand}
+		public Action getTraceCommandAction_0() { return cTraceCommandAction_0; }
+		
 		//'trace'
-		public Keyword getTraceKeyword_0() { return cTraceKeyword_0; }
+		public Keyword getTraceKeyword_1() { return cTraceKeyword_1; }
 		
 		//command=STRING
-		public Assignment getCommandAssignment_1() { return cCommandAssignment_1; }
+		public Assignment getCommandAssignment_2() { return cCommandAssignment_2; }
 		
 		//STRING
-		public RuleCall getCommandSTRINGTerminalRuleCall_1_0() { return cCommandSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getCommandSTRINGTerminalRuleCall_2_0() { return cCommandSTRINGTerminalRuleCall_2_0; }
 	}
 	public class AtomicCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.AtomicCommand");
-		private final Assignment cCommandAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cCommandCommandLiteralEnumRuleCall_0 = (RuleCall)cCommandAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cAtomicCommandAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cCommandAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCommandCommandLiteralEnumRuleCall_1_0 = (RuleCall)cCommandAssignment_1.eContents().get(0);
 		
 		//AtomicCommand:
-		//	command=CommandLiteral;
+		//	{AtomicCommand} command=CommandLiteral;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//{AtomicCommand} command=CommandLiteral
+		public Group getGroup() { return cGroup; }
+		
+		//{AtomicCommand}
+		public Action getAtomicCommandAction_0() { return cAtomicCommandAction_0; }
+		
 		//command=CommandLiteral
-		public Assignment getCommandAssignment() { return cCommandAssignment; }
+		public Assignment getCommandAssignment_1() { return cCommandAssignment_1; }
 		
 		//CommandLiteral
-		public RuleCall getCommandCommandLiteralEnumRuleCall_0() { return cCommandCommandLiteralEnumRuleCall_0; }
+		public RuleCall getCommandCommandLiteralEnumRuleCall_1_0() { return cCommandCommandLiteralEnumRuleCall_1_0; }
 	}
 	public class ConstructionStatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.ConstructionStatement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cCommandAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cCommandGridLiteralEnumRuleCall_0_0 = (RuleCall)cCommandAssignment_0.eContents().get(0);
-		private final Keyword cAtKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cRowKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cXAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cXINTTerminalRuleCall_3_0 = (RuleCall)cXAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cColKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cYAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cYINTTerminalRuleCall_6_0 = (RuleCall)cYAssignment_6.eContents().get(0);
+		private final Action cConstructionStatementAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cCommandAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cCommandGridLiteralEnumRuleCall_1_0 = (RuleCall)cCommandAssignment_1.eContents().get(0);
+		private final Keyword cAtKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cRowKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cXAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cXINTTerminalRuleCall_4_0 = (RuleCall)cXAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cColKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cYAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cYINTTerminalRuleCall_7_0 = (RuleCall)cYAssignment_7.eContents().get(0);
 		
 		//ConstructionStatement:
-		//	command=GridLiteral 'at' 'row:' x=INT "," 'col:' y=INT;
+		//	{ConstructionStatement} command=GridLiteral 'at' 'row:' x=INT "," 'col:' y=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//command=GridLiteral 'at' 'row:' x=INT "," 'col:' y=INT
+		//{ConstructionStatement} command=GridLiteral 'at' 'row:' x=INT "," 'col:' y=INT
 		public Group getGroup() { return cGroup; }
 		
+		//{ConstructionStatement}
+		public Action getConstructionStatementAction_0() { return cConstructionStatementAction_0; }
+		
 		//command=GridLiteral
-		public Assignment getCommandAssignment_0() { return cCommandAssignment_0; }
+		public Assignment getCommandAssignment_1() { return cCommandAssignment_1; }
 		
 		//GridLiteral
-		public RuleCall getCommandGridLiteralEnumRuleCall_0_0() { return cCommandGridLiteralEnumRuleCall_0_0; }
+		public RuleCall getCommandGridLiteralEnumRuleCall_1_0() { return cCommandGridLiteralEnumRuleCall_1_0; }
 		
 		//'at'
-		public Keyword getAtKeyword_1() { return cAtKeyword_1; }
+		public Keyword getAtKeyword_2() { return cAtKeyword_2; }
 		
 		//'row:'
-		public Keyword getRowKeyword_2() { return cRowKeyword_2; }
+		public Keyword getRowKeyword_3() { return cRowKeyword_3; }
 		
 		//x=INT
-		public Assignment getXAssignment_3() { return cXAssignment_3; }
+		public Assignment getXAssignment_4() { return cXAssignment_4; }
 		
 		//INT
-		public RuleCall getXINTTerminalRuleCall_3_0() { return cXINTTerminalRuleCall_3_0; }
+		public RuleCall getXINTTerminalRuleCall_4_0() { return cXINTTerminalRuleCall_4_0; }
 		
 		//","
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
 		//'col:'
-		public Keyword getColKeyword_5() { return cColKeyword_5; }
+		public Keyword getColKeyword_6() { return cColKeyword_6; }
 		
 		//y=INT
-		public Assignment getYAssignment_6() { return cYAssignment_6; }
+		public Assignment getYAssignment_7() { return cYAssignment_7; }
 		
 		//INT
-		public RuleCall getYINTTerminalRuleCall_6_0() { return cYINTTerminalRuleCall_6_0; }
+		public RuleCall getYINTTerminalRuleCall_7_0() { return cYINTTerminalRuleCall_7_0; }
 	}
 	
 	public class OperatorLiteralElements extends AbstractEnumRuleElementFinder {
@@ -809,7 +846,6 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	private final HeadingExpressionElements pHeadingExpression;
 	private final WallAheadExpressionElements pWallAheadExpression;
 	private final NormalExpressionElements pNormalExpression;
-	private final NameElements pName;
 	private final TerminalRule tRL_COMMENT;
 	private final CommentElements pComment;
 	private final IfStatementElements pIfStatement;
@@ -845,7 +881,6 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 		this.pHeadingExpression = new HeadingExpressionElements();
 		this.pWallAheadExpression = new WallAheadExpressionElements();
 		this.pNormalExpression = new NormalExpressionElements();
-		this.pName = new NameElements();
 		this.tRL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "nl.tue.robot.Robot.RL_COMMENT");
 		this.pComment = new CommentElements();
 		this.pIfStatement = new IfStatementElements();
@@ -893,7 +928,8 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Script:
-	//	'Script' name=Name 'runs' 'as'
+	//	{Script}
+	//	'Script' name=ID 'runs' 'as'
 	//	command+=Statement*
 	//	'end';
 	public ScriptElements getScriptAccess() {
@@ -915,7 +951,7 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Expression:
-	//	{Expression};
+	//	NegatedExpression | BinaryExpression | HeadingExpression | WallAheadExpression | NormalExpression;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
 	}
@@ -976,16 +1012,6 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 		return getNormalExpressionAccess().getRule();
 	}
 	
-	//Name:
-	//	{Name} ID;
-	public NameElements getNameAccess() {
-		return pName;
-	}
-	
-	public ParserRule getNameRule() {
-		return getNameAccess().getRule();
-	}
-	
 	//terminal RL_COMMENT:
 	//	'#' !('\n' | '\r')* ('\r'? '\n')?;
 	public TerminalRule getRL_COMMENTRule() {
@@ -1003,6 +1029,7 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IfStatement:
+	//	{IfStatement}
 	//	'if' condition=Expression 'do'
 	//	command+=Statement* ('else' 'do' command2+=Statement*)?
 	//	'end';
@@ -1015,6 +1042,7 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//WhileStatement:
+	//	{WhileStatement}
 	//	'while' condition=Expression 'do'
 	//	command+=Statement*
 	//	'end';
@@ -1027,6 +1055,7 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RepeatStatement:
+	//	{RepeatStatement}
 	//	'repeat' condition=INT 'times'
 	//	command+=Statement*
 	//	'end';
@@ -1039,7 +1068,7 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TraceCommand:
-	//	'trace' command=STRING;
+	//	{TraceCommand} 'trace' command=STRING;
 	public TraceCommandElements getTraceCommandAccess() {
 		return pTraceCommand;
 	}
@@ -1049,7 +1078,7 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AtomicCommand:
-	//	command=CommandLiteral;
+	//	{AtomicCommand} command=CommandLiteral;
 	public AtomicCommandElements getAtomicCommandAccess() {
 		return pAtomicCommand;
 	}
@@ -1059,7 +1088,7 @@ public class RobotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ConstructionStatement:
-	//	command=GridLiteral 'at' 'row:' x=INT "," 'col:' y=INT;
+	//	{ConstructionStatement} command=GridLiteral 'at' 'row:' x=INT "," 'col:' y=INT;
 	public ConstructionStatementElements getConstructionStatementAccess() {
 		return pConstructionStatement;
 	}

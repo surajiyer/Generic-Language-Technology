@@ -70,7 +70,6 @@ public class RobotmodelFactoryImpl extends EFactoryImpl implements RobotmodelFac
 			case RobotmodelPackage.HEADING_EXPRESSION: return createHeadingExpression();
 			case RobotmodelPackage.WALL_AHEAD_EXPRESSION: return createWallAheadExpression();
 			case RobotmodelPackage.NORMAL_EXPRESSION: return createNormalExpression();
-			case RobotmodelPackage.NAME: return createName();
 			case RobotmodelPackage.CONSTRUCTION_STATEMENT: return createConstructionStatement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -271,16 +270,6 @@ public class RobotmodelFactoryImpl extends EFactoryImpl implements RobotmodelFac
 	public NormalExpression createNormalExpression() {
 		NormalExpressionImpl normalExpression = new NormalExpressionImpl();
 		return normalExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Name createName() {
-		NameImpl name = new NameImpl();
-		return name;
 	}
 
 	/**

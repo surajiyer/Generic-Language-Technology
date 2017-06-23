@@ -371,29 +371,6 @@ public class RobotmodelItemProviderAdapterFactory extends RobotmodelAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link robotmodel.Name} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NameItemProvider nameItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link robotmodel.Name}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createNameAdapter() {
-		if (nameItemProvider == null) {
-			nameItemProvider = new NameItemProvider(this);
-		}
-
-		return nameItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link robotmodel.ConstructionStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -528,7 +505,6 @@ public class RobotmodelItemProviderAdapterFactory extends RobotmodelAdapterFacto
 		if (headingExpressionItemProvider != null) headingExpressionItemProvider.dispose();
 		if (wallAheadExpressionItemProvider != null) wallAheadExpressionItemProvider.dispose();
 		if (normalExpressionItemProvider != null) normalExpressionItemProvider.dispose();
-		if (nameItemProvider != null) nameItemProvider.dispose();
 		if (constructionStatementItemProvider != null) constructionStatementItemProvider.dispose();
 	}
 

@@ -68,22 +68,22 @@ public interface RobotmodelPackage extends EPackage {
 	int SCRIPT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCRIPT__NAME = 0;
-
-	/**
 	 * The feature id for the '<em><b>Command</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT__COMMAND = 1;
+	int SCRIPT__COMMAND = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCRIPT__NAME = 1;
 
 	/**
 	 * The number of structural features of the '<em>Script</em>' class.
@@ -732,34 +732,6 @@ public interface RobotmodelPackage extends EPackage {
 	int NORMAL_EXPRESSION_OPERATION_COUNT = ATOMIC_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link robotmodel.impl.NameImpl <em>Name</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see robotmodel.impl.NameImpl
-	 * @see robotmodel.impl.RobotmodelPackageImpl#getName_()
-	 * @generated
-	 */
-	int NAME = 17;
-
-	/**
-	 * The number of structural features of the '<em>Name</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAME_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Name</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAME_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link robotmodel.impl.ConstructionStatementImpl <em>Construction Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -767,7 +739,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getConstructionStatement()
 	 * @generated
 	 */
-	int CONSTRUCTION_STATEMENT = 18;
+	int CONSTRUCTION_STATEMENT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Command</b></em>' attribute.
@@ -822,7 +794,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getTraceLiteral()
 	 * @generated
 	 */
-	int TRACE_LITERAL = 19;
+	int TRACE_LITERAL = 18;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.CommandLiteral <em>Command Literal</em>}' enum.
@@ -832,7 +804,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getCommandLiteral()
 	 * @generated
 	 */
-	int COMMAND_LITERAL = 20;
+	int COMMAND_LITERAL = 19;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.OperatorLiteral <em>Operator Literal</em>}' enum.
@@ -842,7 +814,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getOperatorLiteral()
 	 * @generated
 	 */
-	int OPERATOR_LITERAL = 21;
+	int OPERATOR_LITERAL = 20;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.Keyword <em>Keyword</em>}' enum.
@@ -852,7 +824,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getKeyword()
 	 * @generated
 	 */
-	int KEYWORD = 22;
+	int KEYWORD = 21;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.DirectionLiteral <em>Direction Literal</em>}' enum.
@@ -862,7 +834,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getDirectionLiteral()
 	 * @generated
 	 */
-	int DIRECTION_LITERAL = 23;
+	int DIRECTION_LITERAL = 22;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.HeadingLiteral <em>Heading Literal</em>}' enum.
@@ -872,7 +844,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getHeadingLiteral()
 	 * @generated
 	 */
-	int HEADING_LITERAL = 24;
+	int HEADING_LITERAL = 23;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.WallLiteral <em>Wall Literal</em>}' enum.
@@ -882,7 +854,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getWallLiteral()
 	 * @generated
 	 */
-	int WALL_LITERAL = 25;
+	int WALL_LITERAL = 24;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.AheadLiteral <em>Ahead Literal</em>}' enum.
@@ -892,7 +864,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getAheadLiteral()
 	 * @generated
 	 */
-	int AHEAD_LITERAL = 26;
+	int AHEAD_LITERAL = 25;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.NormalExpressionLiteral <em>Normal Expression Literal</em>}' enum.
@@ -902,7 +874,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getNormalExpressionLiteral()
 	 * @generated
 	 */
-	int NORMAL_EXPRESSION_LITERAL = 27;
+	int NORMAL_EXPRESSION_LITERAL = 26;
 
 	/**
 	 * The meta object id for the '{@link robotmodel.GridLiteral <em>Grid Literal</em>}' enum.
@@ -912,7 +884,7 @@ public interface RobotmodelPackage extends EPackage {
 	 * @see robotmodel.impl.RobotmodelPackageImpl#getGridLiteral()
 	 * @generated
 	 */
-	int GRID_LITERAL = 28;
+	int GRID_LITERAL = 27;
 
 
 	/**
@@ -926,17 +898,6 @@ public interface RobotmodelPackage extends EPackage {
 	EClass getScript();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link robotmodel.Script#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Name</em>'.
-	 * @see robotmodel.Script#getName()
-	 * @see #getScript()
-	 * @generated
-	 */
-	EReference getScript_Name();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link robotmodel.Script#getCommand <em>Command</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -946,6 +907,17 @@ public interface RobotmodelPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getScript_Command();
+
+	/**
+	 * Returns the meta object for the attribute '{@link robotmodel.Script#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see robotmodel.Script#getName()
+	 * @see #getScript()
+	 * @generated
+	 */
+	EAttribute getScript_Name();
 
 	/**
 	 * Returns the meta object for class '{@link robotmodel.Statement <em>Statement</em>}'.
@@ -1328,16 +1300,6 @@ public interface RobotmodelPackage extends EPackage {
 	EAttribute getNormalExpression_Literal();
 
 	/**
-	 * Returns the meta object for class '{@link robotmodel.Name <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Name</em>'.
-	 * @see robotmodel.Name
-	 * @generated
-	 */
-	EClass getName_();
-
-	/**
 	 * Returns the meta object for class '{@link robotmodel.ConstructionStatement <em>Construction Statement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1514,20 +1476,20 @@ public interface RobotmodelPackage extends EPackage {
 		EClass SCRIPT = eINSTANCE.getScript();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SCRIPT__NAME = eINSTANCE.getScript_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Command</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SCRIPT__COMMAND = eINSTANCE.getScript_Command();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCRIPT__NAME = eINSTANCE.getScript_Name();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.impl.StatementImpl <em>Statement</em>}' class.
@@ -1848,16 +1810,6 @@ public interface RobotmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NORMAL_EXPRESSION__LITERAL = eINSTANCE.getNormalExpression_Literal();
-
-		/**
-		 * The meta object literal for the '{@link robotmodel.impl.NameImpl <em>Name</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see robotmodel.impl.NameImpl
-		 * @see robotmodel.impl.RobotmodelPackageImpl#getName_()
-		 * @generated
-		 */
-		EClass NAME = eINSTANCE.getName_();
 
 		/**
 		 * The meta object literal for the '{@link robotmodel.impl.ConstructionStatementImpl <em>Construction Statement</em>}' class.

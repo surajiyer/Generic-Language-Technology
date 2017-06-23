@@ -13,7 +13,6 @@ import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
 import robotmodel.Expression;
-import robotmodel.Name;
 import robotmodel.NegatedExpression;
 import robotmodel.Script;
 import robotmodel.Statement;
@@ -25,7 +24,6 @@ public class RobotFormatter extends AbstractFormatter2 {
   private RobotGrammarAccess _robotGrammarAccess;
   
   protected void _format(final Script script, @Extension final IFormattableDocument document) {
-    document.<Name>format(script.getName());
     EList<Statement> _command = script.getCommand();
     for (final Statement statement : _command) {
       document.<Statement>format(statement);

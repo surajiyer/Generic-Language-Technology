@@ -32,6 +32,7 @@ public class RobotParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
+					put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 					put(grammarAccess.getOperatorLiteralAccess().getAlternatives(), "rule__OperatorLiteral__Alternatives");
 					put(grammarAccess.getDirectionLiteralAccess().getAlternatives(), "rule__DirectionLiteral__Alternatives");
 					put(grammarAccess.getNormalExpressionLiteralAccess().getAlternatives(), "rule__NormalExpressionLiteral__Alternatives");
@@ -43,16 +44,16 @@ public class RobotParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHeadingExpressionAccess().getGroup(), "rule__HeadingExpression__Group__0");
 					put(grammarAccess.getWallAheadExpressionAccess().getGroup(), "rule__WallAheadExpression__Group__0");
 					put(grammarAccess.getNormalExpressionAccess().getGroup(), "rule__NormalExpression__Group__0");
-					put(grammarAccess.getNameAccess().getGroup(), "rule__Name__Group__0");
 					put(grammarAccess.getCommentAccess().getGroup(), "rule__Comment__Group__0");
 					put(grammarAccess.getIfStatementAccess().getGroup(), "rule__IfStatement__Group__0");
-					put(grammarAccess.getIfStatementAccess().getGroup_4(), "rule__IfStatement__Group_4__0");
+					put(grammarAccess.getIfStatementAccess().getGroup_5(), "rule__IfStatement__Group_5__0");
 					put(grammarAccess.getWhileStatementAccess().getGroup(), "rule__WhileStatement__Group__0");
 					put(grammarAccess.getRepeatStatementAccess().getGroup(), "rule__RepeatStatement__Group__0");
 					put(grammarAccess.getTraceCommandAccess().getGroup(), "rule__TraceCommand__Group__0");
+					put(grammarAccess.getAtomicCommandAccess().getGroup(), "rule__AtomicCommand__Group__0");
 					put(grammarAccess.getConstructionStatementAccess().getGroup(), "rule__ConstructionStatement__Group__0");
-					put(grammarAccess.getScriptAccess().getNameAssignment_1(), "rule__Script__NameAssignment_1");
-					put(grammarAccess.getScriptAccess().getCommandAssignment_4(), "rule__Script__CommandAssignment_4");
+					put(grammarAccess.getScriptAccess().getNameAssignment_2(), "rule__Script__NameAssignment_2");
+					put(grammarAccess.getScriptAccess().getCommandAssignment_5(), "rule__Script__CommandAssignment_5");
 					put(grammarAccess.getNegatedExpressionAccess().getNegatedExpressionAssignment_2(), "rule__NegatedExpression__NegatedExpressionAssignment_2");
 					put(grammarAccess.getBinaryExpressionAccess().getLeftExpressionAssignment_2(), "rule__BinaryExpression__LeftExpressionAssignment_2");
 					put(grammarAccess.getBinaryExpressionAccess().getOperatorAssignment_3(), "rule__BinaryExpression__OperatorAssignment_3");
@@ -63,18 +64,18 @@ public class RobotParser extends AbstractContentAssistParser {
 					put(grammarAccess.getWallAheadExpressionAccess().getAheadAssignment_2(), "rule__WallAheadExpression__AheadAssignment_2");
 					put(grammarAccess.getNormalExpressionAccess().getLiteralAssignment_1(), "rule__NormalExpression__LiteralAssignment_1");
 					put(grammarAccess.getCommentAccess().getCommandAssignment_1(), "rule__Comment__CommandAssignment_1");
-					put(grammarAccess.getIfStatementAccess().getConditionAssignment_1(), "rule__IfStatement__ConditionAssignment_1");
-					put(grammarAccess.getIfStatementAccess().getCommandAssignment_3(), "rule__IfStatement__CommandAssignment_3");
-					put(grammarAccess.getIfStatementAccess().getCommand2Assignment_4_2(), "rule__IfStatement__Command2Assignment_4_2");
-					put(grammarAccess.getWhileStatementAccess().getConditionAssignment_1(), "rule__WhileStatement__ConditionAssignment_1");
-					put(grammarAccess.getWhileStatementAccess().getCommandAssignment_3(), "rule__WhileStatement__CommandAssignment_3");
-					put(grammarAccess.getRepeatStatementAccess().getConditionAssignment_1(), "rule__RepeatStatement__ConditionAssignment_1");
-					put(grammarAccess.getRepeatStatementAccess().getCommandAssignment_3(), "rule__RepeatStatement__CommandAssignment_3");
-					put(grammarAccess.getTraceCommandAccess().getCommandAssignment_1(), "rule__TraceCommand__CommandAssignment_1");
-					put(grammarAccess.getAtomicCommandAccess().getCommandAssignment(), "rule__AtomicCommand__CommandAssignment");
-					put(grammarAccess.getConstructionStatementAccess().getCommandAssignment_0(), "rule__ConstructionStatement__CommandAssignment_0");
-					put(grammarAccess.getConstructionStatementAccess().getXAssignment_3(), "rule__ConstructionStatement__XAssignment_3");
-					put(grammarAccess.getConstructionStatementAccess().getYAssignment_6(), "rule__ConstructionStatement__YAssignment_6");
+					put(grammarAccess.getIfStatementAccess().getConditionAssignment_2(), "rule__IfStatement__ConditionAssignment_2");
+					put(grammarAccess.getIfStatementAccess().getCommandAssignment_4(), "rule__IfStatement__CommandAssignment_4");
+					put(grammarAccess.getIfStatementAccess().getCommand2Assignment_5_2(), "rule__IfStatement__Command2Assignment_5_2");
+					put(grammarAccess.getWhileStatementAccess().getConditionAssignment_2(), "rule__WhileStatement__ConditionAssignment_2");
+					put(grammarAccess.getWhileStatementAccess().getCommandAssignment_4(), "rule__WhileStatement__CommandAssignment_4");
+					put(grammarAccess.getRepeatStatementAccess().getConditionAssignment_2(), "rule__RepeatStatement__ConditionAssignment_2");
+					put(grammarAccess.getRepeatStatementAccess().getCommandAssignment_4(), "rule__RepeatStatement__CommandAssignment_4");
+					put(grammarAccess.getTraceCommandAccess().getCommandAssignment_2(), "rule__TraceCommand__CommandAssignment_2");
+					put(grammarAccess.getAtomicCommandAccess().getCommandAssignment_1(), "rule__AtomicCommand__CommandAssignment_1");
+					put(grammarAccess.getConstructionStatementAccess().getCommandAssignment_1(), "rule__ConstructionStatement__CommandAssignment_1");
+					put(grammarAccess.getConstructionStatementAccess().getXAssignment_4(), "rule__ConstructionStatement__XAssignment_4");
+					put(grammarAccess.getConstructionStatementAccess().getYAssignment_7(), "rule__ConstructionStatement__YAssignment_7");
 				}
 			};
 		}

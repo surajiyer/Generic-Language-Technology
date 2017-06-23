@@ -1,0 +1,119 @@
+[%
+	operation parse(parent) {
+		var parentType = parent.getAttribute("xsi:type");
+		
+		// Check conditions first
+		if (parentType == "WhileStatement" or parentType == "IfStatement") {
+			switch(parentType) {
+				case "WhileStatement":
+					out.print("while (");
+				case "IfStatement":
+					out.print("if (");
+			}
+			for (c in parent.condition) {
+				parseCondition(c);
+			}
+			out.print(") {\n");
+
+		} else {
+			if (parentType == "RepeatStatement") {
+				out.print("for(int i=0; i < " + parent.condition + "; i++) {\n");
+			}
+		}
+		
+		
+		// Check the commands
+		for (c in parent.command) {
+			switch(c.getAttribute("xsi:type")) {
+				case "Comment":
+					out.print("//"+c.a_command+"\n");
+				case "AtomicCommand":
+					switch(c.a_command) {
+						case "step":
+							out.print("if (canMove()) {\n"+
+								"moveRobot();\n"+
+								"pause();\n"+
+								"} else {\n"+
+									"reportError(\"Oops, There's a wall in front of me. I can't make a step forward.\");\n"+
+								"}\n");
+						case "turnLeft":
+							out.print("turnLeft();\npause();\n");
+						case "drop":
+							out.print("if (!isFull()) {\n"+
+								"addMark();\n"+
+								"pause();\n"+
+								"} else {\n"+
+									"reportError(\"Oops, its full.\");\n"+
+								"}\n");
+						case "pick":
+							out.print("if (isMark()) {\n"+
+								"removeMark();\n"+
+								"pause();\n"+
+								"} else {\n"+
+									"reportError(\"Oops, its not marked.\");\n"+
+								"}\n");
+
+					case "TraceCommand":
+						out.print("trace(\""+c.a_command+"\");\n");
+						
+					case "ConstructionStatement":
+						out.print("if (isAllowedRow(" + c.a_x + ") && isAllowedCol(" + c.a_y + ")) {\n");
+						switch (c.a_command) {
+							case "buildWall":
+								out.print("buildWall(");
+							case "destroyWall":
+								out.print("destroyWall(");
+							case "pickMark":
+								out.print("addMark(");
+							case "dropMark":
+								out.print("removeMark(");
+						}
+						out.print(c.a_x + ", " + c.a_y + ");\n"+
+							"minipause();\n"+
+						"} else {\n"+
+						"	reportError(\"Well Shit!\");\n"+
+						"})\n");
+						
+					case "WhileStatement" or "IfStatement" or "RepeatStatement":
+						parse(c);
+					default: out.print("reportError(\"This should not happen\");\n");
+				}
+			}
+		}
+		
+		// Put the closing bracket
+		if (parentType == "WhileStatement"
+			or parentType == "IfStatement"
+			or parentType == "RepeatStatement") {
+			out.print("}\n");
+		}
+	}
+	
+	operation parseCondition(c) {
+		switch(c.getAttribute("xsi:type")) {
+			case "NegatedExpression":
+				out.print("!");
+				parseCondition(c.a_negatedExpression);
+			case "BinaryExpression":
+				parseCondition(c.a_leftExpression);
+				switch(c.a_operator) {
+					case "and":
+						out.print(" && ");
+					case "or":
+						out.print(" || ");
+				}
+				parseCondition(c.a_rightExpression);
+			case "HeadingExpression":
+				out.print("heading(Direction." + c.a_directionLiteral + ")");
+			case "WallAheadExpression":
+				out.print("isWall()");
+			case "NormalExpression":
+				switch(c.a_literal) {
+					case "full":
+						out.print("isFull()");
+					case "mark":
+						out.print("isMark()");
+				}
+		}
+	}
+%]

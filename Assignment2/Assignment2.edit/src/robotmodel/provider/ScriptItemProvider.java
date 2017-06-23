@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -84,7 +85,7 @@ public class ScriptItemProvider
 				 true,
 				 false,
 				 true,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -138,7 +139,10 @@ public class ScriptItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Script_type");
+		String label = ((Script)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Script_type") :
+			getString("_UI_Script_type") + " " + label;
 	}
 	
 

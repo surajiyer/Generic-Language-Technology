@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="ASCII"?>
-<Script xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="plugin://glt.robot">
-  <name/>
-  <statements xsi:type="Comment" string="# start of the file&#xD;&#xA;"/>
-  <statements xsi:type="AtomicCommand"/>
-  <statements xsi:type="AtomicCommand"/>
-  <statements xsi:type="TraceCommand" string="Just did two steps"/>
-  <statements xsi:type="WhileStatement">
-    <whileExpression xsi:type="NegatedExpression">
+<?xml version="1.0" encoding="ASCII" standalone="no"?>
+<Script xmlns="plugin://glt.robot" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="sample" xmi:version="2.0">
+  <command command="# start of the file&#13;&#10;" xsi:type="Comment"/>
+  <command command="step" xsi:type="AtomicCommand"/>
+  <command command="step" xsi:type="AtomicCommand"/>
+  <command command="Just did two steps" xsi:type="TraceCommand"/>
+  <command xsi:type="WhileStatement">
+    <condition xsi:type="NegatedExpression">
       <negatedExpression xsi:type="WallAheadExpression"/>
-    </whileExpression>
-    <statements xsi:type="AtomicCommand"/>
-    <statements xsi:type="IfStatement">
-      <ifExpression xsi:type="NormalExpression" literal="mark"/>
-      <statements xsi:type="TraceCommand" string="mark found"/>
-      <statements xsi:type="AtomicCommand" literal="pick"/>
-      <statements2 xsi:type="AtomicCommand" literal="drop"/>
-    </statements>
-  </statements>
+    </condition>
+    <command command="step" xsi:type="AtomicCommand"/>
+    <command xsi:type="IfStatement">
+      <condition literal="mark" xsi:type="NormalExpression"/>
+      <command command="mark found" xsi:type="TraceCommand"/>
+      <command command="pick" xsi:type="AtomicCommand"/>
+      <command2 command="drop" xsi:type="AtomicCommand"/>
+    </command>
+  </command>
 </Script>

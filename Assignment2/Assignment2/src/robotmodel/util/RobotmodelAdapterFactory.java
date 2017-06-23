@@ -136,10 +136,6 @@ public class RobotmodelAdapterFactory extends AdapterFactoryImpl {
 				return createNormalExpressionAdapter();
 			}
 			@Override
-			public Adapter caseName(Name object) {
-				return createNameAdapter();
-			}
-			@Override
 			public Adapter caseConstructionStatement(ConstructionStatement object) {
 				return createConstructionStatementAdapter();
 			}
@@ -398,20 +394,6 @@ public class RobotmodelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNormalExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link robotmodel.Name <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see robotmodel.Name
-	 * @generated
-	 */
-	public Adapter createNameAdapter() {
 		return null;
 	}
 

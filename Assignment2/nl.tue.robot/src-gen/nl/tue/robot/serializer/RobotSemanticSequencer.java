@@ -19,10 +19,8 @@ import robotmodel.AtomicCommand;
 import robotmodel.BinaryExpression;
 import robotmodel.Comment;
 import robotmodel.ConstructionStatement;
-import robotmodel.Expression;
 import robotmodel.HeadingExpression;
 import robotmodel.IfStatement;
-import robotmodel.Name;
 import robotmodel.NegatedExpression;
 import robotmodel.NormalExpression;
 import robotmodel.RepeatStatement;
@@ -58,17 +56,11 @@ public class RobotSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case RobotmodelPackage.CONSTRUCTION_STATEMENT:
 				sequence_ConstructionStatement(context, (ConstructionStatement) semanticObject); 
 				return; 
-			case RobotmodelPackage.EXPRESSION:
-				sequence_Expression(context, (Expression) semanticObject); 
-				return; 
 			case RobotmodelPackage.HEADING_EXPRESSION:
 				sequence_HeadingExpression(context, (HeadingExpression) semanticObject); 
 				return; 
 			case RobotmodelPackage.IF_STATEMENT:
 				sequence_IfStatement(context, (IfStatement) semanticObject); 
-				return; 
-			case RobotmodelPackage.NAME:
-				sequence_Name(context, (Name) semanticObject); 
 				return; 
 			case RobotmodelPackage.NEGATED_EXPRESSION:
 				sequence_NegatedExpression(context, (NegatedExpression) semanticObject); 
@@ -110,13 +102,14 @@ public class RobotSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotmodelPackage.Literals.ATOMIC_COMMAND__COMMAND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAtomicCommandAccess().getCommandCommandLiteralEnumRuleCall_0(), semanticObject.getCommand());
+		feeder.accept(grammarAccess.getAtomicCommandAccess().getCommandCommandLiteralEnumRuleCall_1_0(), semanticObject.getCommand());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     Expression returns BinaryExpression
 	 *     BinaryExpression returns BinaryExpression
 	 *
 	 * Constraint:
@@ -176,27 +169,16 @@ public class RobotSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotmodelPackage.Literals.CONSTRUCTION_STATEMENT__Y));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConstructionStatementAccess().getCommandGridLiteralEnumRuleCall_0_0(), semanticObject.getCommand());
-		feeder.accept(grammarAccess.getConstructionStatementAccess().getXINTTerminalRuleCall_3_0(), semanticObject.getX());
-		feeder.accept(grammarAccess.getConstructionStatementAccess().getYINTTerminalRuleCall_6_0(), semanticObject.getY());
+		feeder.accept(grammarAccess.getConstructionStatementAccess().getCommandGridLiteralEnumRuleCall_1_0(), semanticObject.getCommand());
+		feeder.accept(grammarAccess.getConstructionStatementAccess().getXINTTerminalRuleCall_4_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getConstructionStatementAccess().getYINTTerminalRuleCall_7_0(), semanticObject.getY());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Expression returns Expression
-	 *
-	 * Constraint:
-	 *     {Expression}
-	 */
-	protected void sequence_Expression(ISerializationContext context, Expression semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
+	 *     Expression returns HeadingExpression
 	 *     HeadingExpression returns HeadingExpression
 	 *
 	 * Constraint:
@@ -231,18 +213,7 @@ public class RobotSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Name returns Name
-	 *
-	 * Constraint:
-	 *     {Name}
-	 */
-	protected void sequence_Name(ISerializationContext context, Name semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
+	 *     Expression returns NegatedExpression
 	 *     NegatedExpression returns NegatedExpression
 	 *
 	 * Constraint:
@@ -261,6 +232,7 @@ public class RobotSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
+	 *     Expression returns NormalExpression
 	 *     NormalExpression returns NormalExpression
 	 *
 	 * Constraint:
@@ -295,7 +267,7 @@ public class RobotSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Script returns Script
 	 *
 	 * Constraint:
-	 *     (name=Name command+=Statement*)
+	 *     (name=ID command+=Statement*)
 	 */
 	protected void sequence_Script(ISerializationContext context, Script semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -316,13 +288,14 @@ public class RobotSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RobotmodelPackage.Literals.TRACE_COMMAND__COMMAND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTraceCommandAccess().getCommandSTRINGTerminalRuleCall_1_0(), semanticObject.getCommand());
+		feeder.accept(grammarAccess.getTraceCommandAccess().getCommandSTRINGTerminalRuleCall_2_0(), semanticObject.getCommand());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     Expression returns WallAheadExpression
 	 *     WallAheadExpression returns WallAheadExpression
 	 *
 	 * Constraint:

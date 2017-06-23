@@ -17,7 +17,6 @@ class RobotFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Script script, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		script.getName.format;
 		for (Statement statement : script.getCommand()) {
 			statement.format;
 		}

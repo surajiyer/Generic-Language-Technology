@@ -21,29 +21,19 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class RobotSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected RobotGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_IfStatement___ElseKeyword_4_0_DoKeyword_4_1__q;
+	protected AbstractElementAlias match_IfStatement___ElseKeyword_5_0_DoKeyword_5_1__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (RobotGrammarAccess) access;
-		match_IfStatement___ElseKeyword_4_0_DoKeyword_4_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getElseKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getDoKeyword_4_1()));
+		match_IfStatement___ElseKeyword_5_0_DoKeyword_5_1__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getElseKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getIfStatementAccess().getDoKeyword_5_1()));
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getIDRule())
-			return getIDToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * terminal ID  		: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-	 */
-	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
@@ -51,8 +41,8 @@ public class RobotSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_IfStatement___ElseKeyword_4_0_DoKeyword_4_1__q.equals(syntax))
-				emit_IfStatement___ElseKeyword_4_0_DoKeyword_4_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			if (match_IfStatement___ElseKeyword_5_0_DoKeyword_5_1__q.equals(syntax))
+				emit_IfStatement___ElseKeyword_5_0_DoKeyword_5_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -65,7 +55,7 @@ public class RobotSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     command+=Statement (ambiguity) 'end' (rule end)
 	 *     condition=Expression 'do' (ambiguity) 'end' (rule end)
 	 */
-	protected void emit_IfStatement___ElseKeyword_4_0_DoKeyword_4_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_IfStatement___ElseKeyword_5_0_DoKeyword_5_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
